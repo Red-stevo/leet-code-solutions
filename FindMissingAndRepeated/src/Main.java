@@ -4,9 +4,14 @@ public class Main {
 
     public static void main(String[] args)
     {
-        Solution2 solution = new Solution2();
-        int[][] grid = {{0,2,3},{1,4,0}};
+        Solution3 solution = new Solution3();
+        int[][] grid = { {2,3,4,1}, {5,6,7,1} };
 
-        solution.findMissingAndRepeatedValues(grid);
+        int[] ans = solution.findMissingAndRepeatedValues(grid);
+
+        for(int i : ans)
+        {
+            System.out.printf(i+" ");
+        }
     }
 }
