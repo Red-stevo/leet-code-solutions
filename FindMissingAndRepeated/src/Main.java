@@ -4,7 +4,7 @@ public class Main {
 
     public static void main(String[] args)
     {
-        int[][] grid = {{7,3,4,2},{11,5,16,7},{8,9,10,14},{12,13,1,15}};
+        int[][] grid = {{1,4},{4,2}};
 
       /*  Solution3 solution = new Solution3();
 

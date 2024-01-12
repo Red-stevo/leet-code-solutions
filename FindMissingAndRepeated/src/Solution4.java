@@ -6,8 +6,9 @@ public class Solution4 {
         //finding repeated value.
         for (int i = 0; i < array1.length; i++)
         {
-            for (int j = i; j < array2.length; j++)
+            for (int j = 0; j < array2.length; j++)
             {
+                //handle internal array repetition
                 if(array1 == array2)
                 {
                     if(array1[i] == array2[j] && i != j)
@@ -17,6 +18,10 @@ public class Solution4 {
                 }
                 else
                 {
+                    {
+                        System.out.println("Not similar");
+                        System.out.println(i+": "+j+"---->"+array1[i]+" : "+array2[j]);
+                    }
                     if(array1[i] == array2[j])
                     {
                         return array1[i];
