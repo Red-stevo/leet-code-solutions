@@ -14,6 +14,8 @@ public class QuickSortImpl implements IQuickSort{
 
     @Override
     public int[] quickSort() {
-        return new int[0];
+
+
+        return arr;
     }
 }
