@@ -2,5 +2,5 @@ public interface IQuickSort {
 
     void partition();
 
-    Long[] quickSort();
+    int[] quickSort();
 }
