@@ -7,7 +7,10 @@ public class Main {
 
         IQuickSort iQuickSort = new QuickSortImpl(arr);
 
-        arr = iQuickSort.quickSort();
+        int start = 0;
+        int end = arr.length-1;
+
+        arr = iQuickSort.quickSort(start, end);
 
         for(int i : arr){
             System.out.println(i+"\t");

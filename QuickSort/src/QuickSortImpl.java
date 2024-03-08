@@ -8,12 +8,12 @@ public class QuickSortImpl implements IQuickSort{
     }
 
     @Override
-    public void partition() {
+    public void partition(int start, int end) {
 
     }
 
     @Override
-    public int[] quickSort() {
+    public int[] quickSort(int start, int end) {
 
 
         return arr;

@@ -1,6 +1,6 @@
 public interface IQuickSort {
 
-    void partition();
+    void partition(int start, int end);
 
-    int[] quickSort();
+    int[] quickSort(int start, int end);
 }
