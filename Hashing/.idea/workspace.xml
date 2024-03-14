@@ -9,7 +9,6 @@
       <change beforePath="$PROJECT_DIR$/../FindMissingAndRepeated/src/OptimumSolution.java" beforeDir="false" afterPath="$PROJECT_DIR$/../FindMissingAndRepeated/src/OptimumSolution.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../FindMissingAndRepeated/src/QuickSortAlgorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/../FindMissingAndRepeated/src/QuickSortAlgorithm.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../FindMissingAndRepeated/src/Solution3.java" beforeDir="false" afterPath="$PROJECT_DIR$/../FindMissingAndRepeated/src/Solution3.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -68,7 +67,7 @@
       <updated>1707104293042</updated>
       <workItem from="1707104353770" duration="806000" />
       <workItem from="1710346199717" duration="637000" />
-      <workItem from="1710417155835" duration="767000" />
+      <workItem from="1710417155835" duration="1078000" />
     </task>
     <servers />
   </component>
