@@ -4,15 +4,15 @@ public class SmallestValueOfNumber {
         char[] chars = String.valueOf(number).toCharArray();
         int[] arr = new int[chars.length];
         int pointer = 0;
-        for(int i : chars){
-            arr[pointer] = i;
+        for(char i : chars){
+            arr[pointer] = Integer.parseInt(String.valueOf(i));
+            pointer++;
         }
 
-        arr = quickSort(arr,0,arr.length);
+        arr = quickSort(arr,0,arr.length-1);
 
         for(int i : arr){
-            System.out.println("SmallestValueOfNumber.solution");
-            System.out.println(i +"\t");
+            System.out.print(i +"\t");
         }
 
         return number;
@@ -23,22 +23,29 @@ public class SmallestValueOfNumber {
         int pivot = partition(arr,start,end);
 
 
-
+        return arr;
     }
 
     private int partition(int[] arr, int start, int stop){
-        int pivot = start;
+        int pivot = arr[start];
+
+        ++start;
 
         while(start < stop){
-                while(arr[start] <= arr[pivot] && start < stop)
-                    ++start;
-                while(arr[stop] > arr[pivot] && stop >= start)
-                    --stop;
 
-                swap(arr,start, stop);
+            while(start < stop && arr[start] <= pivot){
+                arr[start-1]  = arr[start];
+                start++;
+            }
+            while(stop > start && arr[stop] > pivot){
+                stop--;
+            }
+            if(start < stop){
+                swap(arr,start,stop);
+            }
         }
-        swap(arr,pivot,stop);
-        return stop;
+        arr[start-1] = pivot;
+        return start-1;
     }
 
     private void swap(int[] arr, int point1, int point2){
