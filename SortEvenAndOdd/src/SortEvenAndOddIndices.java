@@ -1,7 +1,7 @@
 public class SortEvenAndOddIndices {
     public int[] solutionI(int[] arr){
 
-        for(int j = 1 ; j < arr.length; j =+2){
+        for(int j = 1 ; j < arr.length; j +=2){
             int h = j -1;
             for(int i = 1; i < arr.length; i+=2){
                 int k = i - 1;
@@ -15,8 +15,7 @@ public class SortEvenAndOddIndices {
                 }
             }
         }
-
-        return null;
+        return arr;
     }
 
     private void swap(int[] array, int first, int last){
