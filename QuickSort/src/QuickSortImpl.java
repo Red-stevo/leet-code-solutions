@@ -8,7 +8,14 @@ public class QuickSortImpl implements IQuickSort {
 
     @Override
     public int[] quickSort(int[] arr, int start, int end) {
-        return new int[0];
+
+        if(start < end){
+            int pivot = partition(arr,start,end);
+
+            quickSort(arr,start,pivot-1);
+            quickSort(arr,pivot+1,end);
+        }
+        return arr;
     }
 
     private void swap(int[] arr, int start, int end){

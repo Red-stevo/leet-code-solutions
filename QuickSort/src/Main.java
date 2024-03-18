@@ -7,7 +7,7 @@ public class Main {
         IQuickSort iQuickSort = new QuickSortImpl();
 
 
-       arr = iQuickSort.quickSort(arr,0,arr.length);
+       arr = iQuickSort.quickSort(arr,0,arr.length-1);
 
 
        for(int i : arr){
