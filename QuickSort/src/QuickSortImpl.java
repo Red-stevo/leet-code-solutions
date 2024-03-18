@@ -9,7 +9,7 @@ public class QuickSortImpl implements IQuickSort {
             while (arr[start] <= arr[pivot] && start < end)
                 start++;
 
-            while (arr[end] > arr[pivot] && end > start)
+            while (arr[end] > arr[pivot] && end >= start)
                 end--;
 
             if(start < end){
