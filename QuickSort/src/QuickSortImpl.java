@@ -3,6 +3,22 @@ public class QuickSortImpl implements IQuickSort {
 
     @Override
     public int partition(int[] arr, int start, int end) {
+        int pivot = start;
+
+        while(start < end){
+            while (arr[start] <= arr[pivot] && start < end)
+                start++;
+
+            while (arr[end] > arr[pivot] && end > start)
+                end--;
+
+            if(start < end){
+                swap(arr,start,end);
+            }
+            swap(arr,end,pivot);
+            return end;
+        }
+
         return 0;
     }
 
