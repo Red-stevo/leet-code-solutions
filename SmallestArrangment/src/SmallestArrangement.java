@@ -53,7 +53,7 @@ public class SmallestArrangement {
                 swap(arr,start,end);
             }
         }
-        swap(arr, pivot,start);
+        swap(arr, pivot,end);
         return start;
     }
 
