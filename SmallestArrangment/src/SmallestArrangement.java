@@ -1,5 +1,3 @@
-import java.util.Arrays;
-
 public class SmallestArrangement {
 
     /*get the number and convert it to a character array*/
@@ -14,8 +12,15 @@ public class SmallestArrangement {
         arr = quickSort(arr, 0, arr.length-1);
 
         if(number < 0){
-
-
+            reverse(arr);
+        }
+        else {
+            if(arr[0] == 0){
+                int i;
+                for (i = 1; i < chars.length; i++)
+                    if(arr[i] > 0) break;
+                swap(arr,0, i);
+            }
         }
 
         for (int i = 0; i < chars.length; i++) {
@@ -41,12 +46,21 @@ public class SmallestArrangement {
         return 0;
     }
 
-    private int[] reverse(int[] arr){
+    private void reverse(int[] arr){
         int start = 0, end = arr.length-1;
 
         while (start < end){
             swap(arr, start, end);
-
+            start++;
+            end--;
         }
     }
+
+    private void swap(int[] arr, int start, int end) {
+        int temp = arr[start];
+        arr[start] = arr[end];
+        arr[end] = temp;
+    }
+
+
 }
