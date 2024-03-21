@@ -42,8 +42,19 @@ public class SmallestArrangement {
     }
 
     private int partition(int[] arr, int start, int end) {
+        int pivot = start;
 
-        return 0;
+        while (start < end){
+            while (arr[start] <= arr[pivot] && start < end) start++;
+
+            while (arr[end] > arr[pivot] && start <= end) end--;
+
+            if(start < end){
+                swap(arr,start,end);
+            }
+        }
+        swap(arr, pivot,start);
+        return start;
     }
 
     private void reverse(int[] arr){
