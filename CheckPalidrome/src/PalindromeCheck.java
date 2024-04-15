@@ -10,9 +10,9 @@ public class PalindromeCheck {
 
         /*Loop throw the character to determine whether it is an array*/
         for (int i = 0 ; i < end ; i++){
-            int j = end - i;
+            if(wordArray[i] != wordArray[end]) //if only one of the characters fails to meet the conditions
+                return false; //check for palindrome fails.
         }
-
-        return  null;
+        return  true;
     }
 }
