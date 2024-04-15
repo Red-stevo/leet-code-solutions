@@ -12,6 +12,7 @@ public class PalindromeCheck {
         for (int i = 0 ; i < end ; i++){
             if(wordArray[i] != wordArray[end]) //if only one of the characters fails to meet the conditions
                 return false; //check for palindrome fails.
+            end--;
         }
         return  true;
     }
