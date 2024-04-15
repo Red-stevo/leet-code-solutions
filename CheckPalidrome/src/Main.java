@@ -3,7 +3,7 @@ public class Main {
         PalindromeCheck palindromeCheck = new PalindromeCheck();
 
 
-        String word = "11011";
+        String word = "madam";
 
         System.out.println(palindromeCheck.check(word));
 
