@@ -11,7 +11,7 @@ public class Main {
 
         Scanner scanner = new Scanner(System.in);
 
-        for (int i = 0; i < 7; i++) {
+        for (int i = 0; i < 5; i++) {
             System.out.print("Enter Your String data : ");
             String data = scanner.next();
 
@@ -40,6 +40,30 @@ public class Main {
                 tempNode = tempNode.getLeft();
             } else if (tempNode.getRight().getLeft() == null || tempNode.getRight().getRight() == null) {
                 tempNode = tempNode.getRight();
+            }
+        }
+    }
+
+
+    private void printBinaryTree(){
+
+        TreeNode tempNode;
+
+        tempNode = root;
+
+        // This loop break in only the new node gets a rightful position to be placed.
+        while (true) {
+
+            if(!tempNode.getChecked()){
+                System.out.println(tempNode.getData());
+                tempNode.setChecked(true);
+                tempNode = root;
+            } else if (tempNode.getChecked() && tempNode.getLeft() != null ) {
+                tempNode = tempNode.getLeft();
+            } else if (tempNode.getChecked() && tempNode.getRight() != null) {
+                tempNode = tempNode.getRight();
+            }else {
+                break;
             }
         }
     }

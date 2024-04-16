@@ -6,6 +6,16 @@ public class TreeNode {
 
     private String data;
 
+    private Boolean checked;
+
+    public Boolean getChecked() {
+        return checked;
+    }
+
+    public void setChecked(Boolean checked) {
+        this.checked = checked;
+    }
+
     public TreeNode(String data) {
         this.data = data;
     }
@@ -32,5 +42,6 @@ public class TreeNode {
 
     public void setData(String data) {
         this.data = data;
+        this.checked = false;
     }
 }
