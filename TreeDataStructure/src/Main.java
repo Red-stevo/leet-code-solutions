@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
@@ -7,6 +9,14 @@ public class Main {
         //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
         // to see how IntelliJ IDEA suggests fixing it.
 
+        Scanner scanner = new Scanner(System.in);
+
+        for (int i = 0; i < 7; i++) {
+            System.out.print("Enter Your String data : ");
+            String data = scanner.next();
+
+            createBinaryTree(data);
+        }
     }
 
     private static void createBinaryTree(String data){
@@ -18,6 +28,7 @@ public class Main {
 
         tempNode = root;
 
+        // This loop break in only the new node gets a rightful position to be placed.
         while (true) {
             if (tempNode.getLeft() == null) {
                 tempNode.setLeft(newNode);
