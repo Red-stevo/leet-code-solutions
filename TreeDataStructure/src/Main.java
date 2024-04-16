@@ -14,9 +14,10 @@ public class Main {
         for (int i = 0; i < 5; i++) {
             System.out.print("Enter Your String data : ");
             String data = scanner.next();
-
             createBinaryTree(data);
         }
+
+       printBinaryTree();
     }
 
     private static void createBinaryTree(String data){
@@ -45,7 +46,7 @@ public class Main {
     }
 
 
-    private void printBinaryTree(){
+    private static void printBinaryTree(){
 
         TreeNode tempNode;
 

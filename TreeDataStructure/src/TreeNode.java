@@ -18,6 +18,7 @@ public class TreeNode {
 
     public TreeNode(String data) {
         this.data = data;
+        this.checked = false;
     }
 
     public TreeNode getLeft() {
@@ -42,6 +43,5 @@ public class TreeNode {
 
     public void setData(String data) {
         this.data = data;
-        this.checked = false;
     }
 }
