@@ -11,7 +11,7 @@ public class Main {
 
         Scanner scanner = new Scanner(System.in);
 
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 6; i++) {
             System.out.print("Enter Your String data : ");
             String data = scanner.next();
             createBinaryTree(data);
@@ -20,6 +20,8 @@ public class Main {
        printBinaryTree();
     }
 
+    /*This method is not fully effective in
+    * creating more than 6 node, which I will work on later*/
     private static void createBinaryTree(String data){
 
          // This node will be used in the creation process of the tree
@@ -56,12 +58,22 @@ public class Main {
         while (true) {
 
             if(!tempNode.getChecked()){
-                System.out.println(tempNode.getData());
+                System.out.print(tempNode.getData());
                 tempNode.setChecked(true);
                 tempNode = root;
             } else if (tempNode.getLeft() != null && !tempNode.getLeft().getChecked()) {
                 tempNode = tempNode.getLeft();
+                System.out.println("/");
             } else if (tempNode.getRight() != null && !tempNode.getRight().getChecked()) {
+                tempNode = tempNode.getRight();
+                System.out.println("\\");
+            }else if(tempNode.getLeft().getLeft() != null && !tempNode.getLeft().getLeft().getChecked()){
+                tempNode = tempNode.getLeft();
+            } else if (tempNode.getLeft().getRight() != null && !tempNode.getLeft().getRight().getChecked()) {
+                tempNode = tempNode.getLeft();
+            }else if(tempNode.getRight().getLeft() != null && !tempNode.getRight().getLeft().getChecked()){
+                tempNode = tempNode.getRight();
+            } else if (tempNode.getRight().getRight() != null && !tempNode.getRight().getRight().getChecked()) {
                 tempNode = tempNode.getRight();
             }else {
                 break;
