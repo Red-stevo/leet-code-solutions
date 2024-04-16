@@ -59,9 +59,9 @@ public class Main {
                 System.out.println(tempNode.getData());
                 tempNode.setChecked(true);
                 tempNode = root;
-            } else if (tempNode.getChecked() && tempNode.getLeft() != null ) {
+            } else if (tempNode.getLeft() != null && !tempNode.getLeft().getChecked()) {
                 tempNode = tempNode.getLeft();
-            } else if (tempNode.getChecked() && tempNode.getRight() != null) {
+            } else if (tempNode.getRight() != null && !tempNode.getRight().getChecked()) {
                 tempNode = tempNode.getRight();
             }else {
                 break;
