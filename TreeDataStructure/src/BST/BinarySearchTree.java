@@ -25,11 +25,17 @@ public class BinarySearchTree {
 
     //method to print the BST using recursion(inorder tree traversal).
     private void inorder(Node node) {
-
         if (node != null) {
-            inorder(node.getLeft());
-            System.out.print("==> " + node.getData());
             inorder(node.getRight());
+            System.out.print("==> " + node.getData());
+            inorder(node.getLeft());
+        }
+    }
+
+
+    private void preorder(Node node){
+        if(node != null){
+
         }
     }
 }
