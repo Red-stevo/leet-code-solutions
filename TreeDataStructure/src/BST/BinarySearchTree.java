@@ -24,9 +24,9 @@ public class BinarySearchTree {
     }
     private void inorderAsc(Node node) {
         if (node != null) {
-            inorderDesc(node.getLeft());
+            inorderAsc(node.getLeft());
             System.out.print("==> " + node.getData());
-            inorderDesc(node.getRight());
+            inorderAsc(node.getRight());
         }
     }
 
@@ -54,7 +54,7 @@ public class BinarySearchTree {
 
     private void preorder(Node node){
         if(node != null){
-            System.out.println("==> "+node.getData());
+            System.out.print("==> "+node.getData());
             preorder(node.getLeft());
             preorder(node.getRight());
         }
@@ -64,7 +64,7 @@ public class BinarySearchTree {
         if(node != null){
             postorder(node.getLeft());
             postorder(node.getRight());
-            System.out.println("==> "+node.getData());
+            System.out.print("==> "+node.getData());
         }
     }
 }

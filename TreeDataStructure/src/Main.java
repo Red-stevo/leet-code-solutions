@@ -19,8 +19,11 @@ public class Main {
             binarySearchTree.insertData(data);
         }
         binarySearchTree.printDesc();
+        System.out.println();
         binarySearchTree.printAsc();
+        System.out.println();
         binarySearchTree.printPreorder();
+        System.out.println();
         binarySearchTree.printPostorder();
     }
 
