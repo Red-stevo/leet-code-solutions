@@ -1,3 +1,5 @@
+import BST.BinarySearchTree;
+
 import java.util.Scanner;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
@@ -8,16 +10,15 @@ public class Main {
     public static void main(String[] args) {
         //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
         // to see how IntelliJ IDEA suggests fixing it.
-
+        BinarySearchTree binarySearchTree = new BinarySearchTree();
         Scanner scanner = new Scanner(System.in);
 
-        for (int i = 0; i < 6; i++) {
-            System.out.print("Enter Your String data : ");
-            String data = scanner.next();
-            createBinaryTree(data);
+        for (int i = 0; i < 10; i++) {
+            System.out.print("Enter Your Integer data : ");
+            Integer data = scanner.nextInt();
+            binarySearchTree.insertData(data);
         }
 
-       printBinaryTree();
     }
 
     /*This method is not fully effective in
