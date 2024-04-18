@@ -18,7 +18,7 @@ public class Main {
             Integer data = scanner.nextInt();
             binarySearchTree.insertData(data);
         }
-
+        binarySearchTree.printInorder();
     }
 
     /*This method is not fully effective in

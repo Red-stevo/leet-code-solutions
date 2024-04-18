@@ -4,7 +4,11 @@ public class BinarySearchTree {
 
     private Node root;
     public void insertData(Integer data){
-        createBST(root, data);
+        root = createBST(root, data);
+    }
+
+    public void printInorder(){
+        inorder(root);
     }
 
     /*The method below uses recursion to create a BST*/
@@ -16,5 +20,16 @@ public class BinarySearchTree {
         else
             node.setRight(createBST(node.getRight(), data));
         return  node;
+    }
+
+
+    //method to print the BST using recursion(inorder tree traversal).
+    private void inorder(Node node) {
+
+        if (node != null) {
+            inorder(node.getLeft());
+            System.out.print("==> " + node.getData());
+            inorder(node.getRight());
+        }
     }
 }
