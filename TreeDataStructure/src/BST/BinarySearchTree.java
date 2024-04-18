@@ -7,8 +7,27 @@ public class BinarySearchTree {
         root = createBST(root, data);
     }
 
-    public void printInorder(){
-        inorder(root);
+    public void printDesc(){
+        inorderDesc(root);
+    }
+
+    public void printAsc(){
+        inorderAsc(root);
+    }
+
+    public void printPreorder(){
+        preorder(root);
+    }
+
+    public void printPostorder(){
+        postorder(root);
+    }
+    private void inorderAsc(Node node) {
+        if (node != null) {
+            inorderDesc(node.getLeft());
+            System.out.print("==> " + node.getData());
+            inorderDesc(node.getRight());
+        }
     }
 
     /*The method below uses recursion to create a BST*/
@@ -24,18 +43,28 @@ public class BinarySearchTree {
 
 
     //method to print the BST using recursion(inorder tree traversal).
-    private void inorder(Node node) {
+    private void inorderDesc(Node node) {
         if (node != null) {
-            inorder(node.getRight());
+            inorderDesc(node.getRight());
             System.out.print("==> " + node.getData());
-            inorder(node.getLeft());
+            inorderDesc(node.getLeft());
         }
     }
 
 
     private void preorder(Node node){
         if(node != null){
+            System.out.println("==> "+node.getData());
+            preorder(node.getLeft());
+            preorder(node.getRight());
+        }
+    }
 
+    private void postorder(Node node){
+        if(node != null){
+            postorder(node.getLeft());
+            postorder(node.getRight());
+            System.out.println("==> "+node.getData());
         }
     }
 }

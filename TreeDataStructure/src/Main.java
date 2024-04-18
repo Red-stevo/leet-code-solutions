@@ -18,7 +18,10 @@ public class Main {
             Integer data = scanner.nextInt();
             binarySearchTree.insertData(data);
         }
-        binarySearchTree.printInorder();
+        binarySearchTree.printDesc();
+        binarySearchTree.printAsc();
+        binarySearchTree.printPreorder();
+        binarySearchTree.printPostorder();
     }
 
     /*This method is not fully effective in
