@@ -56,17 +56,14 @@ public class Main {
 
         // This loop break in only the new node gets a rightful position to be placed.
         while (true) {
-
             if(!tempNode.getChecked()){
                 System.out.print(tempNode.getData());
                 tempNode.setChecked(true);
                 tempNode = root;
             } else if (tempNode.getLeft() != null && !tempNode.getLeft().getChecked()) {
                 tempNode = tempNode.getLeft();
-                System.out.println("/");
             } else if (tempNode.getRight() != null && !tempNode.getRight().getChecked()) {
                 tempNode = tempNode.getRight();
-                System.out.println("\\");
             }else if(tempNode.getLeft().getLeft() != null && !tempNode.getLeft().getLeft().getChecked()){
                 tempNode = tempNode.getLeft();
             } else if (tempNode.getLeft().getRight() != null && !tempNode.getLeft().getRight().getChecked()) {
