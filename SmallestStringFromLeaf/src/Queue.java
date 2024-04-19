@@ -12,6 +12,9 @@ public class Queue {
         }
 
     public TreeNode dequeue(){
+       if(isEmpty()){
+          return null;
+       }
         end++;
       return treeNodes.get(end-1);
     }
