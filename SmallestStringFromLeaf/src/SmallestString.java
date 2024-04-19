@@ -9,8 +9,6 @@ public class SmallestString {
      */
 
 
-    private TreeNode[] queue = new TreeNode[100];
-
 
 
 }
