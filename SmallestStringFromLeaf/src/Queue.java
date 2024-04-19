@@ -1,26 +1,23 @@
-public class Queue {
+import java.util.ArrayList;
 
+public class Queue {
     private int start, end = -1;
 
-    private int full = 100;
-    private TreeNode[] queue = new TreeNode[full];
+    private ArrayList<TreeNode> treeNodes = new ArrayList<>();
 
-    public void enqueue(){
+    public void enqueue(TreeNode treeNode) {
+        if (end == -1) end++;
         start++;
-        if(end == -1) end++;
-    }
+        treeNodes.add(start, treeNode);
+        }
 
     public TreeNode dequeue(){
         end++;
-
-      return null;
+      return treeNodes.get(end-1);
     }
 
     private Boolean isEmpty(){
+        if(end == start) end = start = -1;
         return start == end;
-    }
-
-    private Boolean isFull(){
-        return start == full;
     }
 }
