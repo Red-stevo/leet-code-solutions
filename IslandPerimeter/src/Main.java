@@ -2,7 +2,7 @@
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        int[][] grid = {{0,1,0,0},{1,1,1,0},{0,1,0,0},{1,1,0,0}};
+        int[][] grid = {{0,1,1,0},{1,1,1,0},{1,1,1,0},{1,1,1,0}};
 
         IslandPerimeter islandPerimeter = new IslandPerimeter();
 

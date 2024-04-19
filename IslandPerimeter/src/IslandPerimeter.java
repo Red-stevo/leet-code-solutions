@@ -11,10 +11,10 @@ public class IslandPerimeter {
                     perimeter +=4;
 
                     /*Check the top row*/
-                    if(i != 0) if(grid[i-1][j] == 1) perimeter -=1;
+                    if(i != 0) if(grid[i-1][j] == 1) perimeter -=2;
 
                     /*check the previous column*/
-                    if(j != 0) if(grid[i][j-1] == 1) perimeter -=1;
+                    if(j != 0) if(grid[i][j-1] == 1) perimeter -=2;
                 }
             }
         }
