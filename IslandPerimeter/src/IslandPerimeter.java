@@ -22,3 +22,5 @@ public class IslandPerimeter {
         return 0;
     }
 }
+/*Time complexity big O(n*2)*/
+/*Space complexity big O(1)*/
