@@ -19,7 +19,7 @@ public class IslandPerimeter {
             }
         }
 
-        return 0;
+        return perimeter;
     }
 }
 /*Time complexity big O(n*2)*/
