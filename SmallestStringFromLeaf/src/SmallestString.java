@@ -8,7 +8,11 @@ public class SmallestString {
      *2.
      */
 
+    public String smallestFromLeaf(TreeNode root) {
 
+        return null;
+    }
+}
 
 
 }
