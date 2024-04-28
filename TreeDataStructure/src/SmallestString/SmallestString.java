@@ -28,4 +28,18 @@ public class SmallestString {
         }
 
     }
+
+    private void compare(List<Integer> testString){
+        int longer, longest;
+
+        if(testString.size() < smallestString.size()) {
+            longer = testString.size();
+            longest = smallestString.size();
+        }else{
+            longer = smallestString.size();
+            longest = testString.size();
+        }
+
+
+    }
 }
