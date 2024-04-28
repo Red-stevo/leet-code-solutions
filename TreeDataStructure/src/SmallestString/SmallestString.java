@@ -40,6 +40,9 @@ public class SmallestString {
             longest = testString.size();
         }
 
-
+       while (longest >= longer){
+           if()
+           --longest;
+       }
     }
 }
