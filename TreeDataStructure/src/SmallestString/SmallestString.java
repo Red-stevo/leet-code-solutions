@@ -2,11 +2,30 @@ package SmallestString;
 
 import BST.Node;
 
+import java.util.List;
+
 public class SmallestString {
 
-    public String solution(Node root){
+    private List<Integer> smallestString;
+
+    {
+        smallestString.add(26);
+    }
 
 
-        return null;
+    public void solution(Node node, List<Integer> testString){
+
+
+        if(node != null){
+            testString.add(node.getData());
+
+            if(node.getLeft() == null && node.getRight() == null){
+
+            }
+
+            solution(node.getLeft(), testString);
+            solution(node.getRight(), testString);
+        }
+
     }
 }
