@@ -33,17 +33,19 @@ public class SmallestString {
         int longer, longest;
 
         if(testString.size() < smallestString.size()) {
-            longer = testString.size();
-            longest = smallestString.size();
+           compareHelper(testString, smallestString);
         }else{
-            longer = smallestString.size();
-            longest = testString.size();
+            compareHelper(smallestString, testString);
         }
 
        while (longest >= longer){
            if()
            --longest;
        }
+    }
+
+    private void compareHelper(List<Integer> smallestString, List<Integer> largest) {
+
     }
 
 }
