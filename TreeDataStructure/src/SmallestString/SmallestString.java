@@ -14,8 +14,9 @@ public class SmallestString {
     }
 
 
+    /*Recursive method to get the string(integer representing characters)
+    * from the tree given the root.*/
     public void solution(Node node, List<Integer> testString){
-
 
         if(node != null){
             testString.add(node.getData());
@@ -27,21 +28,23 @@ public class SmallestString {
             solution(node.getLeft(), testString);
             solution(node.getRight(), testString);
         }
-
     }
 
+    /*Method to update the existing smallest String after comparison.*/
     private void compare(List<Integer> testString){
 
-
         if(testString.size() < smallestString.size()) {
-           compareHelper(testString, smallestString);
+           this.smallestString = compareHelper(testString, smallestString);
         }else{
-            compareHelper(smallestString, testString);
+            this.smallestString = compareHelper(smallestString, testString);
         }
 
 
     }
 
+    /*This method will loop through the two string the smallest one and the one added
+    * during the tree traversal if it is smaller the one generated is replaced
+    * with the generated one.*/
     private List<Integer> compareHelper(List<Integer> smallest, List<Integer> largest) {
         int longest = largest.size(), longer = smallest.size();
 
