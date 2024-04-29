@@ -30,7 +30,7 @@ public class SmallestString {
     }
 
     private void compare(List<Integer> testString){
-        int longer, longest;
+
 
         if(testString.size() < smallestString.size()) {
            compareHelper(testString, smallestString);
@@ -38,14 +38,22 @@ public class SmallestString {
             compareHelper(smallestString, testString);
         }
 
-       while (longest >= longer){
-           if()
-           --longest;
-       }
+
     }
 
     private void compareHelper(List<Integer> smallestString, List<Integer> largest) {
+        int longest = largest.size(), longer = smallestString.size();
 
+        while (longer >= 0){
+
+            if(smallestString.get(longest) < largest.get(longer)){
+
+            }
+
+
+        --longest;
+        --longer;
+        }
     }
 
 }
