@@ -41,19 +41,20 @@ public class SmallestString {
 
     }
 
-    private void compareHelper(List<Integer> smallestString, List<Integer> largest) {
+    private List<Integer> compareHelper(List<Integer> smallestString, List<Integer> largest) {
         int longest = largest.size(), longer = smallestString.size();
 
         while (longer >= 0){
 
-            if(smallestString.get(longest) < largest.get(longer)){
+            if(smallestString.get(longest) > largest.get(longer))
+                return largest;
+            else if (smallestString.get(longest) < largest.get(longer))
+                return smallestString;
 
-            }
-
-
-        --longest;
+            --longest;
         --longer;
         }
+        return smallestString;
     }
 
 }
