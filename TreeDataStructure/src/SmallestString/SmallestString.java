@@ -53,7 +53,7 @@ public class SmallestString {
     * during the tree traversal if it is smaller the one generated is replaced
     * with the generated one.*/
     private List<Integer> compareHelper(List<Integer> smallest, List<Integer> largest) {
-        int longest = largest.size(), longer = smallest.size();
+        int longest = largest.size()-1, longer = smallest.size()-1;
 
         while (longer > 0){
 
