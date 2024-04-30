@@ -7,6 +7,14 @@ public class BinarySearchTree {
         root = createBST(root, data);
     }
 
+    public Node getRoot() {
+        return root;
+    }
+
+    public void setRoot(Node root) {
+        this.root = root;
+    }
+
     public void printDesc(){
         inorderDesc(root);
     }
