@@ -22,9 +22,8 @@ public class SmallestString {
             testString.add(node.getData());
 
             if(node.getLeft() == null && node.getRight() == null){
-
+                compare(testString);
             }
-
             solution(node.getLeft(), testString);
             solution(node.getRight(), testString);
         }
@@ -38,8 +37,7 @@ public class SmallestString {
         }else{
             this.smallestString = compareHelper(smallestString, testString);
         }
-
-
+        testString.remove(testString.size()-1);
     }
 
     /*This method will loop through the two string the smallest one and the one added
@@ -56,7 +54,7 @@ public class SmallestString {
                 return smallest;
 
             --longest;
-            --longer;
+            longer--;
         }
         return smallest;
     }
