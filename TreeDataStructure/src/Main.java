@@ -2,6 +2,8 @@ import BST.BinarySearchTree;
 import BST.Node;
 import SmallestString.SmallestString;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
@@ -25,7 +27,9 @@ public class Main {
 
         Node node = binarySearchTree.getRoot();
 
+        List<Integer> smallestStringList = new ArrayList<>();
 
+        smallestString.solution(node, smallestStringList);
         /*binarySearchTree.printDesc();
         System.out.println();
         binarySearchTree.printAsc();

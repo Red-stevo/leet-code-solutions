@@ -13,6 +13,13 @@ public class SmallestString {
         this.smallestString.add(26);
     }
 
+    public List<Integer> getSmallestString() {
+        return smallestString;
+    }
+
+    public void setSmallestString(List<Integer> smallestString) {
+        this.smallestString = smallestString;
+    }
 
     /*Recursive method to get the string(integer representing characters)
     * from the tree given the root.*/
