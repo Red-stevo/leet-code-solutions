@@ -2,6 +2,7 @@ package SmallestString;
 
 import BST.Node;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class SmallestString {
@@ -10,7 +11,8 @@ public class SmallestString {
 
 
     public SmallestString() {
-        this.smallestString.add(26);
+        this.smallestString = new ArrayList<>();
+        smallestString.add(26);
     }
 
     public List<Integer> getSmallestString() {
@@ -61,7 +63,7 @@ public class SmallestString {
                 return smallest;
 
             --longest;
-            longer--;
+            --longer;
         }
         return smallest;
     }

@@ -30,6 +30,14 @@ public class Main {
         List<Integer> smallestStringList = new ArrayList<>();
 
         smallestString.solution(node, smallestStringList);
+
+
+        List<Integer> ans = smallestString.getSmallestString();
+
+        for (Integer num : ans){
+            System.out.println(num+"\n");
+        }
+
         /*binarySearchTree.printDesc();
         System.out.println();
         binarySearchTree.printAsc();
