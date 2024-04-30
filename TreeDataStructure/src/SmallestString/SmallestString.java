@@ -55,11 +55,11 @@ public class SmallestString {
     private List<Integer> compareHelper(List<Integer> smallest, List<Integer> largest) {
         int longest = largest.size()-1, longer = smallest.size()-1;
 
-        while (longer > 0){
+        while (longer >= 0){
 
-            if(smallest.get(longest) > largest.get(longer))
+            if(smallest.get(longer) > largest.get(longest))
                 return largest;
-            else if (smallest.get(longest) < largest.get(longer))
+            else if (smallest.get(longer) < largest.get(longest))
                 return smallest;
 
             --longest;
