@@ -6,11 +6,7 @@ public class Main {
     }
 
 
-
-
-    /*function to find the number of islands.*/
     public static int NumberOfIslands(int[][] matrix){
-
 
         return 0;
     }
