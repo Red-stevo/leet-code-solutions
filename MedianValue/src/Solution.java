@@ -8,6 +8,9 @@ public class Solution {
             pos2 = sumLength/2;
             pos3 = pos2+1;
         }
+
+        System.out.println(pos2);
+        System.out.println(pos3);
         for (int k = 0; k < sumLength; k++) {
             if(i >= nums1.length){
                 if(k == pos1) return nums2[j];
@@ -37,6 +40,9 @@ public class Solution {
                 j++;
             }
         }
+
+        System.out.println(pos2);
+        System.out.println(pos3);
         return (double) (pos2 + pos3)/2;
     }
 }
