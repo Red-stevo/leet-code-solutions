@@ -7,13 +7,15 @@ public class Solution {
         else {
             pos2 = sumLength/2;
             pos3 = pos2+1;
+            if(sumLength == 1){
+                if(nums1.length == 1) return (double)(nums1[0] + nums2[0])/2;
+                else if (nums1.length == 2)  return (double) (nums1[0] + nums1[1])/2;
+                else return (double) (nums2[0] + nums2[1])/2;
+            }
         }
-
-        System.out.println(pos2);
-        System.out.println(pos3);
         for (int k = 0; k < sumLength; k++) {
-            if(i >= nums1.length){
-                if(k == pos1) return nums2[j];
+            if (i >= nums1.length) {
+                if (k == pos1) return nums2[j];
                 else if (k == pos2) pos2 = nums2[j];
                 else if (k == pos3) {
                     pos3 = nums2[j];
@@ -21,28 +23,31 @@ public class Solution {
                 }
                 j++;
             } else if (j >= nums2.length) {
-                if(k == pos1) return (nums1[i]);
-                else if (k == pos2) pos2 = nums1[i];
-                else if (k == pos3) pos3 = nums1[i];
-                i++;
-            }else if(nums1[i] < nums2[j]){
-                if(k == pos1)return (nums1[i]);
+                if (k == pos1) return (nums1[i]);
                 else if (k == pos2) pos2 = nums1[i];
                 else if (k == pos3) {
                     pos3 = nums1[i];
                     break;
                 }
                 i++;
-            }else {
-                if(k == pos1) return (nums2[j]);
+            } else if (nums1[i] < nums2[j]) {
+                if (k == pos1) return (nums1[i]);
+                else if (k == pos2) pos2 = nums1[i];
+                else if (k == pos3) {
+                    pos3 = nums1[i];
+                    break;
+                }
+                i++;
+            } else if (nums1[i] >= nums2[j]) {
+                if (k == pos1) return (nums2[j]);
                 else if (k == pos2) pos2 = nums2[j];
-                else if (k == pos3) pos3 = nums2[j];
+                else if (k == pos3) {
+                    pos3 = nums2[j];
+                    break;
+                }
                 j++;
             }
         }
-
-        System.out.println(pos2);
-        System.out.println(pos3);
         return (double) (pos2 + pos3)/2;
     }
 }
