@@ -23,7 +23,10 @@ public class Solution {
                     pos2 = nums2[j];
                     check = false;
                 }
-                else if (k == pos3) return (double) (pos2 + nums2[j])/2;
+                else if (k == pos3){
+                    pos3 = nums2[j];
+                    break;
+                }
                 j++;
             } else if (j >= nums2.length) {
                 if (k == pos1) return (nums1[i]);
@@ -31,7 +34,10 @@ public class Solution {
                     pos2 = nums1[i];
                     check = false;
                 }
-                else if (k == pos3) return (double) (pos2 + nums2[i])/2;
+                else if (k == pos3){
+                    pos3 = nums1[i];
+                    break;
+                }
                 i++;
             } else if (nums1[i] < nums2[j]) {
                 if (k == pos1) return (nums1[i]);
@@ -39,7 +45,10 @@ public class Solution {
                     pos2 = nums1[i];
                     check = false;
                 }
-                else if (k == pos3) return (double) (pos2 + nums2[i])/2;
+                else if (k == pos3){
+                        pos3 = nums1[i];
+                        break;
+                }
                 i++;
             } else {
                 if (k == pos1) return (nums2[j]);
@@ -47,10 +56,18 @@ public class Solution {
                     pos2 = nums2[j];
                     check = false;
                 }
-                else if (k == pos3) return (double) (pos2 + nums2[j])/2;
+                else if (k == pos3){
+                    pos3 = nums2[j];
+                    break;
+                }
                 j++;
             }
         }
-        return 0;
+
+        if(pos2 + pos3 == 0){
+            return 0.00;
+        }
+
+        return (double) (pos2 + pos3) /2;
     }
 }
