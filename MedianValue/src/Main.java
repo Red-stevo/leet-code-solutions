@@ -5,8 +5,8 @@ public class Main {
 
         Solution solution = new Solution();
 
-        int[] nums1 = {3};
-        int[] nums2 = {2};
+        int[] nums1 = {};
+        int[] nums2 = {1,2,3,4,5,6};
 
         System.out.println("ANS : "+solution.findMedianSortedArrays(nums1, nums2));
     }

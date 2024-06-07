@@ -7,12 +7,16 @@ public class Solution {
         else {
             pos2 = sumLength/2;
             pos3 = pos2+1;
+
             if(sumLength == 1){
                 if(nums1.length == 1) return (double)(nums1[0] + nums2[0])/2;
                 else if (nums1.length == 2)  return (double) (nums1[0] + nums1[1])/2;
                 else return (double) (nums2[0] + nums2[1])/2;
             }
         }
+
+        System.out.println(pos2);
+        System.out.println(pos3);
         for (int k = 0; k < sumLength; k++) {
             if (i >= nums1.length) {
                 if (k == pos1) return nums2[j];
@@ -48,6 +52,9 @@ public class Solution {
                 j++;
             }
         }
+
+        System.out.println(pos2);
+        System.out.println(pos3);
         return (double) (pos2 + pos3)/2;
     }
 }
