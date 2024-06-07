@@ -1,0 +1,42 @@
+public class Solution {
+    public double findMedianSortedArrays(int[] nums1, int[] nums2) {
+        int sumLength = (nums1.length + nums2.length)-1, i=0, j=0,pos1=-1,pos2=0,pos3=0;
+        if(nums1.length == 0 && nums2.length == 1) return nums2[0];
+        else if(nums1.length == 1 && nums2.length == 0) return nums1[0];
+        if(sumLength%2 == 0) pos1 = sumLength/2;
+        else {
+            pos2 = sumLength/2;
+            pos3 = pos2+1;
+        }
+        for (int k = 0; k < sumLength; k++) {
+            if(i >= nums1.length){
+                if(k == pos1) return nums2[j];
+                else if (k == pos2) pos2 = nums2[j];
+                else if (k == pos3) {
+                    pos3 = nums2[j];
+                    break;
+                }
+                j++;
+            } else if (j >= nums2.length) {
+                if(k == pos1) return (nums1[i]);
+                else if (k == pos2) pos2 = nums1[i];
+                else if (k == pos3) pos3 = nums1[i];
+                i++;
+            }else if(nums1[i] < nums2[j]){
+                if(k == pos1)return (nums1[i]);
+                else if (k == pos2) pos2 = nums1[i];
+                else if (k == pos3) {
+                    pos3 = nums1[i];
+                    break;
+                }
+                i++;
+            }else {
+                if(k == pos1) return (nums2[j]);
+                else if (k == pos2) pos2 = nums2[j];
+                else if (k == pos3) pos3 = nums2[j];
+                j++;
+            }
+        }
+        return (double) (pos2 + pos3)/2;
+    }
+}
