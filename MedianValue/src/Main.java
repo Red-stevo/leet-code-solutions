@@ -5,9 +5,9 @@ public class Main {
 
         Solution solution = new Solution();
 
-        int[] nums1 = {2,3,4,5};
-        int[] nums2 = {};
+        int[] nums1 = {1,7,8};
+        int[] nums2 = {3,6,9};
 
-        System.out.println("ANS : "+solution.findMedianSortedArrays(nums1, nums2));
+        System.out.println("ANS : "+solution.findMedianSortedArray(nums1, nums2));
     }
 }
