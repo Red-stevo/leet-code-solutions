@@ -3,13 +3,15 @@ public class Solution {
         if(s.isEmpty()) return 0;
         char[] chars = s.toCharArray();
         int j=0, i;
+        boolean checkZero = false;
         char sign = '+';
         for (i = 0; i < chars.length; i++) {
             if((chars[i] == '0' || chars[i] == ' ') && i == j) {
+                if(chars[i] == '0') checkZero = true;
                 ++j;
                 continue;
             }
-            if((chars[i] == '-' || chars[i] == '+') && j == i) {
+            if((chars[i] == '-' || chars[i] == '+') && j == i && !checkZero) {
                 ++j;
                 sign = chars[i];
                 continue;
