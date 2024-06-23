@@ -4,7 +4,7 @@ class Heap:
         LENGTH = size
 
         while size >= 0:
-            parent = (size - 1) / 2
+            parent = int((size - 1) / 2)
             if nums[parent] > nums[size]:
                 self.swap(nums, parent, size)
             size2 = size
@@ -24,6 +24,7 @@ class Heap:
                 left_child = 2 * size2 + 1
                 right_child = left_child + 1
             size -= 1
+        return nums
 
     def swap(self, nums, index1, index2):
         temp = nums[index1]
