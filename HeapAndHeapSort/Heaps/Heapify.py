@@ -19,25 +19,20 @@ class Heap:
                             self.swap(nums, right_child, size2)
                             size2 = right_child
                         else:
-                            print("break")
                             break
                     elif nums[left_child] < nums[size2]:
                         self.swap(nums, left_child, size2)
                         size2 = left_child
                     else:
-                        print("break")
                         break
 
-                    print(f"left child : {left_child}\t right child : {right_child}")
                     left_child = 2 * size2 + 1
                     right_child = left_child + 1
-                    print(f"left child : {left_child}\t right child : {right_child}")
 
             size -= 1
         return nums
 
     def swap(self, nums, index1, index2):
-        print("swap.")
         temp = nums[index1]
         nums[index1] = nums[index2]
         nums[index2] = temp
