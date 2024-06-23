@@ -32,8 +32,6 @@ class Heap:
                     left_child = 2 * size2 + 1
                     right_child = left_child + 1
                     print(f"left child : {left_child}\t right child : {right_child}")
-            else:
-                break
 
             size -= 1
         return nums
