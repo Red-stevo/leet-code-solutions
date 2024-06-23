@@ -11,7 +11,6 @@ class Heap:
                 left_child = 2 * size2 + 1
                 right_child = left_child + 1
                 while left_child <= LENGTH:
-                    print(size, size2, left_child, right_child)
                     if left_child <= LENGTH and right_child <= LENGTH:
                         if nums[left_child] < nums[right_child] and nums[left_child] < nums[size2]:
                             self.swap(nums, left_child, size2)
@@ -19,6 +18,9 @@ class Heap:
                         elif nums[right_child] < nums[size2]:
                             self.swap(nums, right_child, size2)
                             size2 = right_child
+                        else:
+                            print("break")
+                            break
                     elif nums[left_child] < nums[size2]:
                         self.swap(nums, left_child, size2)
                         size2 = left_child
