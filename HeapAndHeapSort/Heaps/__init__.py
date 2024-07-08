@@ -17,5 +17,6 @@ def main():
     print(nums)
     print(heapify.is_min_heap(nums))
 
+
 if __name__ == "__main__":
     main()
