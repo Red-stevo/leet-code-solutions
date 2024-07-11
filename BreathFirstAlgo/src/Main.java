@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
@@ -31,7 +32,6 @@ public class Main {
     }
 
     private static <T> void breathFirstTraversal(Vertex<T> root){
-
         Queue<Vertex<T>> queue = new LinkedList<>();
         queue.add(root);
 
