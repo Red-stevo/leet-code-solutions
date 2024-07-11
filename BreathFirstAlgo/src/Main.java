@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
@@ -6,8 +5,29 @@ import java.util.Queue;
 public class Main {
     public static void main(String[] args) {
 
-        Vertex<Integer> root = createGraph();
+       // Vertex<Integer> root = createGraph();
+        Vertex<Character> root = newGraph();
         breathFirstTraversal(root);
+    }
+
+    private static Vertex<Character> newGraph(){
+
+        Vertex<Character> nodeA = new Vertex<>('A');
+        Vertex<Character> nodeB = new Vertex<>('B');
+        Vertex<Character> nodeC = new Vertex<>('C');
+        Vertex<Character> nodeD = new Vertex<>('D');
+        Vertex<Character> nodeE = new Vertex<>('E');
+        Vertex<Character> nodeF = new Vertex<>('F');
+        Vertex<Character> nodeG = new Vertex<>('G');
+        Vertex<Character> nodeH = new Vertex<>('H');
+        Vertex<Character> nodeI = new Vertex<>('I');
+
+        nodeA.setNeighbours(List.of(nodeB, nodeC));
+        nodeB.setNeighbours(List.of(nodeD, nodeE));
+        nodeC.setNeighbours(List.of(nodeF, nodeG));
+        nodeF.setNeighbours(List.of(nodeH, nodeI));
+
+        return nodeA;
     }
 
     private static Vertex<Integer> createGraph(){
