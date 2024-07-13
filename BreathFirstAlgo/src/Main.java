@@ -10,6 +10,8 @@ public class Main {
         breathFirstTraversal(root);
     }
 
+
+    //tree data structure.
     private static Vertex<Character> newGraph(){
 
         Vertex<Character> nodeA = new Vertex<>('A');
@@ -19,12 +21,12 @@ public class Main {
         Vertex<Character> nodeE = new Vertex<>('E');
         Vertex<Character> nodeF = new Vertex<>('F');
         Vertex<Character> nodeG = new Vertex<>('G');
-        Vertex<Character> nodeH = new Vertex<>('H');
+        Vertex<Character> nodeH = new Vertex<>('I');
         Vertex<Character> nodeI = new Vertex<>('I');
 
         nodeA.setNeighbours(List.of(nodeB, nodeC));
         nodeB.setNeighbours(List.of(nodeD, nodeE));
-        nodeC.setNeighbours(List.of(nodeF, nodeG));
+        nodeC.setNeighbours(List.of(nodeF, nodeG, nodeI));
         nodeF.setNeighbours(List.of(nodeH, nodeI));
 
         return nodeA;
@@ -60,6 +62,7 @@ public class Main {
 
            if(!current.getVisited()){
                current.setVisited(true);
+
                List<T> values = current.getNeighbours().stream()
                                .map(Vertex::getData).toList();
                System.out.println(  "Vertex{ neighbours= " + values
