@@ -1,6 +1,6 @@
 def main():
-    coins = [1, 5, 10, 20, 40]
-    amount = 11
+    coins = [2, 5, 10, 20, 40]
+    amount = 23
     ans_arr = minimum_coins(coins, amount)
     print(ans_arr)
 
@@ -19,6 +19,9 @@ def minimum_coins(coins, amount):
                 working_list[j][k] = working_list[j - 1][k]
             else:
                 working_list[j][k] = min(working_list[j][k - coins[j - 1]] + 1, working_list[j - 1][k])
+
+        for n in working_list:
+            print(n)
     return working_list[len(coins)][amount]
 
 
