@@ -1,4 +1,4 @@
-from Heaps.Heapify import Heap
+from Heaps.Heapify import Heap, min_heap, is_min_heap
 
 
 def main():
@@ -13,9 +13,9 @@ def main():
             90, 89, 88, 87, 86, 85, 84, 83, 82, 81,
             100, 99, 98, 97, 96, 95, 94, 93, 92, 91]
     heapify = Heap()
-    nums = heapify.min_heap(nums)
+    nums = min_heap(nums)
     print(nums)
-    print(heapify.is_min_heap(nums))
+    print(is_min_heap(nums))
 
 
 if __name__ == "__main__":
