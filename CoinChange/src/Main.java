@@ -3,8 +3,8 @@ import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
-        int[] coins = {2, 10, 20};
-        int amount = 44;
+        int[] coins = {1, 2, 10, 20};
+        int amount = 3;
         System.out.println(coinChange(coins, amount));
     }
 
@@ -17,13 +17,20 @@ public class Main {
             for (int j = 1; j < amount + 1; j++) {
                 if (coins[i - 1] > j)
                     working_arr[i][j] = working_arr[i - 1][j];
-                else
-                    working_arr[i][j] = min(1+working_arr[i][j - coins[i - 1]], working_arr[i - 1][j]);
+                else {
+                    int num = -1;
+                    if(working_arr[i][j - coins[i - 1]] == 0 && j - coins[i-1] != 0)
+                        num = 0;
+                    else
+                        num = working_arr[i][j - coins[i - 1]] + 1;
+
+                    working_arr[i][j] = min(num , working_arr[i - 1][j]);
+                }
             }
         }
 
-        for(int[] nums : working_arr)
-            System.out.println(Arrays.toString(nums));
+        if(working_arr[coins.length][amount] == 0)
+            return -1;
 
         return working_arr[coins.length][amount];
     }
