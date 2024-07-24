@@ -17,13 +17,10 @@ public class Main {
                 if(coins[i] > i)
                     working_arr[i][j] = 0;
                 else
-                    working_arr[i][j] = min(1 + working_arr[i][j - coins[i]], working_arr[i-1][j]);
+                    working_arr[i][j] = Math.min(1 + working_arr[i][j - coins[i]], working_arr[i-1][j]);
             }
         }
         return 0;
     }
 
-    private static int min(int num1, int num2){
-
-    }
 }
