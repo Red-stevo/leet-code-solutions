@@ -4,7 +4,7 @@ import java.util.Arrays;
 public class Main {
     public static void main(String[] args) {
         int[] coins = {2, 10, 20};
-        int amount = 45;
+        int amount = 44;
         System.out.println(coinChange(coins, amount));
     }
 
@@ -18,7 +18,7 @@ public class Main {
                 if (coins[i - 1] > j)
                     working_arr[i][j] = working_arr[i - 1][j];
                 else
-                    working_arr[i][j] = min(1 + working_arr[i][j - coins[i - 1]], working_arr[i - 1][j]);
+                    working_arr[i][j] = min(1+working_arr[i][j - coins[i - 1]], working_arr[i - 1][j]);
             }
         }
 
