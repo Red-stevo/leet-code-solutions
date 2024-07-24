@@ -22,4 +22,8 @@ public class Main {
         }
         return 0;
     }
+
+    private static int min(int num1, int num2){
+
+    }
 }
