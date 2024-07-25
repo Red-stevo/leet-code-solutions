@@ -3,8 +3,10 @@ import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
-        int[] coins = {1, 2, 10, 20};
-        int amount = 3;
+       int[] coins = {186,419,83,408};
+       int amount = 419;
+       //int[] coins = {2, 10, 20};
+        //int amount = 56;
         System.out.println(coinChange(coins, amount));
     }
 
@@ -28,6 +30,9 @@ public class Main {
                 }
             }
         }
+
+        for(int[] arr : working_arr)
+            System.out.println(Arrays.toString(arr));
 
         if(working_arr[coins.length][amount] == 0)
             return -1;
