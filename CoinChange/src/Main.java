@@ -1,13 +1,14 @@
-import java.sql.Array;
 import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
-      /* int[] coins = {186,419,83,408};
-       int amount = 419;*/
-       int[] coins = {20, 2, 10};
-        int amount = 56;
-        System.out.println(coinChange(coins, amount));
+        Solution solution = new Solution();
+       int[] coins = {186,419,83,408};
+       int amount = 6349;
+    /*   int[] coins = {20, 2, 10};
+        int amount = 56;*/
+        System.out.println(solution.coinChange(coins, amount));
+        //System.out.println(coinChange(coins, amount));
     }
 
     public static int coinChange(int[] coins, int amount){
