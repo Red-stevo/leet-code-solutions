@@ -13,9 +13,7 @@ public class Solution {
                     arr[i] = Math.min(1 + arr[i-coin], arr[i]);
             }
         }
-
         System.out.println(Arrays.toString(arr));
-
         return arr[amount-1] == amount ? -1: arr[amount-1];
     }
 }
