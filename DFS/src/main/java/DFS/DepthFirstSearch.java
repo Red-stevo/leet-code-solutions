@@ -9,6 +9,10 @@ public class DepthFirstSearch {
         stack.push(root);
         while (!stack.isEmpty()){
             Node node = stack.pop();
+
+            if(node.isVisited())
+                continue;
+
             node.setVisited(true);
             System.out.println(node.getData());
             if(node.getChildren() != null)
