@@ -1,17 +1,53 @@
 package org.example;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import DFS.DepthFirstSearch;
+import DFS.Node;
+
+import java.util.List;
+
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+        DepthFirstSearch depthFirstSearch = new DepthFirstSearch();
+        Node root = createGraph();
+        depthFirstSearch.dfs(root);
+
+    }
+
+    public static Node createGraph(){
+
+        Node nodeK = new Node('K');
+        Node nodeJ = new Node('J');
+        Node nodeL = new Node('L');
+        Node nodeE = new Node('E');
+        Node nodeF = new Node('F');
+        Node nodeH = new Node('H');
+        Node nodeM = new Node('M');
+        Node nodeN = new Node('N');
+        Node nodeD = new Node('D');
+        Node nodeI = new Node('I');
+        Node nodeG = new Node('G');
+        Node nodeO = new Node('O');
+        Node nodeC = new Node('C');
+        Node nodeB = new Node('B');
+        Node nodeA = new Node('A');
+
+        nodeA.setChildren(List.of(nodeB, nodeC));
+        nodeB.setChildren(List.of(nodeO, nodeG));
+        nodeC.setChildren(List.of(nodeI, nodeD));
+        nodeD.setChildren(List.of(nodeM, nodeN));
+        nodeO.setChildren(List.of(nodeK, nodeJ));
+        nodeG.setChildren(List.of(nodeL, nodeE));
+        nodeI.setChildren(List.of(nodeF, nodeH));
+        nodeJ.setChildren(null);
+        nodeK.setChildren(null);
+        nodeL.setChildren(null);
+        nodeM.setChildren(null);
+        nodeN.setChildren(null);
+        nodeE.setChildren(null);
+        nodeF.setChildren(null);
+        nodeH.setChildren(null);
+
+        return nodeA;
     }
 }
