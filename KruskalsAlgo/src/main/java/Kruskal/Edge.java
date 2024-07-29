@@ -17,5 +17,4 @@ public class Edge<T> implements Comparable<Edge<T>> {
     public int compareTo(Edge<T> edge) {
         return Integer.compare(this.weight, edge.getWeight());
     }
-
 }
