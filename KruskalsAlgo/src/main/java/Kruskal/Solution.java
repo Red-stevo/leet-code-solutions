@@ -49,10 +49,10 @@ public class Solution {
         System.out.println(mst);
     }
 
-    private Node<Character> getAbsoluteParent(List<Node<Character>> nodeMatrix, Node<Character> node){
+    private Character getAbsoluteParent(List<Node<Character>> nodeMatrix, Node<Character> node){
 
         if(node.getData() == node.getParent())
-            return node;
+            return node.getData();
 
         for (Node<Character> parent: nodeMatrix)
             if(node.getParent() == parent.getData()){
