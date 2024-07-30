@@ -1,11 +1,13 @@
 package Kruskal;
 
 import lombok.Data;
+import lombok.ToString;
 
 import javax.swing.*;
 import java.util.List;
 
 @Data
+@ToString
 public class Node<T> {
 
     public Node(T data) {
@@ -23,5 +25,6 @@ public class Node<T> {
     private int rank;
 
     private T parent;
+
 
 }

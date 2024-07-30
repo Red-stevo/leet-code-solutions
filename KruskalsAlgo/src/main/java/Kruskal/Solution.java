@@ -17,14 +17,8 @@ public class Solution {
     public void solution(){
         PriorityQueue<Edge<Character>> queue = new PriorityQueue<>();
         queue.addAll(edges);
-        NodeProps[] nodeProps = new NodeProps[nodes.size()];
 
-
-
-
-        System.out.println(Arrays.toString(nodeProps));
-
-
+        System.out.println(nodes);
         int edgeCount = 0;
 
 
