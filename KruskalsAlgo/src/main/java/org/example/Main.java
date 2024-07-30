@@ -50,7 +50,8 @@ public class Main {
                 new Edge<>(5, nodeD, nodeC),
                 new Edge<>(3, nodeE, nodeB),
                 new Edge<>(1, nodeA, nodeE),
-                new Edge<>(11, nodeE, nodeD)
+                new Edge<>(11, nodeE, nodeD),
+                new Edge<>(2, nodeD, nodeA)
                 );
 
         return new Help(nodes, edges);
