@@ -3,6 +3,7 @@ package org.example;
 import Kruskal.Edge;
 import Kruskal.Help;
 import Kruskal.Node;
+import Kruskal.Solution;
 import lombok.Data;
 
 
@@ -23,6 +24,9 @@ public class Main {
 
         edges = helper.getEdges();
 
+        Solution solution = new Solution(nodes, edges);
+
+        solution.solution();
 
     }
 
