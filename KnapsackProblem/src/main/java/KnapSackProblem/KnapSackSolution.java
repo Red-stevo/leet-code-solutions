@@ -9,13 +9,6 @@ public class KnapSackSolution {
         int lenProduct = weight.length+1;
         int[][] matrix = new int[lenProduct][maxW];
 
-        for (int k = 0; k < maxW; k++) {
-            matrix[0][k] = 0;
-            if(k < lenProduct)
-                matrix[k][0] = 0;
-        }
-
-
         for (int j = 1; j < lenProduct; j++) {
             for (int i = 1; i < maxW; i++) {
                 if(i >= weight[j-1])
@@ -25,23 +18,24 @@ public class KnapSackSolution {
             }
         }
 
-
-        return matrixAnalysis(matrix, profit, maxW);
+        for(int[] arr : matrix){
+            System.out.println(Arrays.toString(arr));
+        }
+        return matrixAnalysis(matrix,weight, maxW);
     }
 
-    private int[] matrixAnalysis(int[][] matrix,int[] profit, int columns){
-        int row = profit.length;
+    private int[] matrixAnalysis(int[][] matrix,int[] weight, int columns){
+        int row = weight.length;
         int column = columns-1;
-        int[] analysisAns = new int[profit.length];
+        int[] analysisAns = new int[weight.length];
 
-        while(matrix[row][column] == matrix[row-1][column]){
-            row -=1;
+        while (row > 1) {
+            if (matrix[row][column] == matrix[row - 1][column])
+                row -= 1;
 
-            if(row == 0) break;
-
-            if(matrix[row][column] != matrix[row-1][column]){
-                analysisAns[row-1] = 1;
-                column = matrix[row][column] - profit[row-1];
+            if (matrix[row][column] != matrix[row - 1][column]) {
+                analysisAns[row - 1] = 1;
+                column = column - weight[row - 1];
             }
         }
         return analysisAns;
