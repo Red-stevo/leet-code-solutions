@@ -3,6 +3,8 @@ package org.example;
 
 import KnapSackProblem.KnapSackSolution;
 
+import java.util.Arrays;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -12,7 +14,6 @@ public class Main {
         int mass = 8;
 
         KnapSackSolution knapSackSolution = new KnapSackSolution();
-        knapSackSolution.knapSackSolution(weights, profit, mass);
-
+        System.out.println(Arrays.toString(knapSackSolution.knapSackSolution(weights, profit, mass)));
     }
 }

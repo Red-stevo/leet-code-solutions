@@ -25,7 +25,25 @@ public class KnapSackSolution {
             }
         }
 
-        System.out.println(Arrays.deepToString(matrix));
-        return null;
+
+        return matrixAnalysis(matrix, profit, maxW);
+    }
+
+    private int[] matrixAnalysis(int[][] matrix,int[] profit, int columns){
+        int row = profit.length;
+        int column = columns-1;
+        int[] analysisAns = new int[profit.length];
+
+        while(matrix[row][column] == matrix[row-1][column]){
+            row -=1;
+
+            if(row == 0) break;
+
+            if(matrix[row][column] != matrix[row-1][column]){
+                analysisAns[row-1] = 1;
+                column = matrix[row][column] - profit[row-1];
+            }
+        }
+        return analysisAns;
     }
 }
