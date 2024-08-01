@@ -23,8 +23,8 @@ public class Solution {
         int value = 0;
         if (set.isEmpty()) return matrix[marker.get(A)][0];
         for (int i = 0; i < set.size(); i++) {
-            value += matrix[marker.get(A)][marker.get(set.get(i))] + g(set.get(0), new ArrayList<>(set), matrix,new ArrayList<>(), marker);
-            values.add(value);
+            value += matrix[marker.get(A)][marker.get(set.get(i))] + g(set.get(i), new ArrayList<>(set), matrix,new ArrayList<>(), marker);
+            System.out.println(set);
         }
         System.out.println(values);
         return value;
