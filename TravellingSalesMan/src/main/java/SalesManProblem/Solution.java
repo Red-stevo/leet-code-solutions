@@ -1,5 +1,6 @@
 package SalesManProblem;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Random;
@@ -11,16 +12,12 @@ public class Solution {
         int size = 4;
         Random random = new Random();
         int[][] matrix = new int[size][size];
-
-        for (int i = 0; i < size; i++) {
-            for (int j = 0; j < size; j++) {
-
-            }
-        }
-
-
-
-
+        HashMap<Character, Integer> maker = new HashMap<>();
+        List<Character> towns = new ArrayList<>(List.of('A', 'B', 'C', 'D'));
+        for (char c : towns) maker.put(c,towns.indexOf(c));
+        for (int i = 0; i < size; i++) for (int j = 0; j < size; j++) matrix[i][j] = random.nextInt();
+        List<Integer> value = new ArrayList<>();
+        g(towns.get(0), towns, matrix, value, maker);
         return 0;
     }
 
