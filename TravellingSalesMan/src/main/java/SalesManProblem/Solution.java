@@ -26,7 +26,7 @@ public class Solution {
         for (Character i : set){
             for(Character j : set){
                 if(i == j) continue;
-                value += matrix[marker.get(i)][marker.get(j)] + g(set.get(marker.get(i)), new ArrayList<>(set), matrix,new ArrayList<>(), marker);
+                value += matrix[marker.get(A)][marker.get(j)] + g(i, new ArrayList<>(set), matrix,new ArrayList<>(), marker);
                 values.add(value);
             }
         }
