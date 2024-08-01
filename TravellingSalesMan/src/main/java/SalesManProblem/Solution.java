@@ -18,15 +18,19 @@ public class Solution {
         return 0;
     }
 
-    public int g(char A, List<Character> set, int[][] matrix, List<Integer> values, HashMap<Character, Integer> marker){
-        set.remove(0);
+    public int g(Character A, List<Character> set, int[][] matrix, List<Integer> values, HashMap<Character, Integer> marker){
+        set.remove(set.indexOf(A));
         int value = 0;
         if (set.isEmpty()) return matrix[marker.get(A)][0];
-        for (int i = 0; i < set.size(); i++) {
-            value += matrix[marker.get(A)][marker.get(set.get(i))] + g(set.get(i), new ArrayList<>(set), matrix,new ArrayList<>(), marker);
-            System.out.println(set);
+
+        for (Character i : set){
+            for(Character j : set){
+                if(i == j) continue;
+                value += matrix[marker.get(i)][marker.get(j)] + g(set.get(marker.get(i)), new ArrayList<>(set), matrix,new ArrayList<>(), marker);
+                values.add(value);
+            }
         }
-        System.out.println(values);
+
         return value;
     }
 }
