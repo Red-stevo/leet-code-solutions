@@ -10,27 +10,27 @@ public class Solution {
         Random random = new Random();
         int[][] matrix = new int[size][size];
         HashMap<Character, Integer> maker = new HashMap<>();
-        List<Character> towns = new ArrayList<>(List.of('A', 'B', 'C', 'D'));
-        for (char c : towns) maker.put(c,towns.indexOf(c));
+        List<Character> towns = new ArrayList<>(List.of('B', 'C', 'D'));
+        maker.put('A',0);
+        for (char c : towns) maker.put(c,towns.indexOf(c)+1);
         for (int i = 0; i < size; i++) for (int j = 0; j < size; j++) matrix[i][j] = random.nextInt(1,2);
         List<Integer> value = new ArrayList<>();
-        g(towns.get(0), towns, matrix, value, maker);
+        g('A', towns, matrix, value, maker);
         return 0;
     }
 
     public int g(Character A, List<Character> set, int[][] matrix, List<Integer> values, HashMap<Character, Integer> marker){
-        set.remove(set.indexOf(A));
         int value = 0;
-        if (set.isEmpty()) return matrix[marker.get(A)][0];
-
+        List<Character> set2 = new ArrayList<>(set);
         for (Character i : set){
-            for(Character j : set){
-                if(i == j) continue;
-                value += matrix[marker.get(A)][marker.get(j)] + g(i, new ArrayList<>(set), matrix,new ArrayList<>(), marker);
+            set2.remove(i);
+            for(Character j : set2){
+                System.out.println(set);
+                value += matrix[marker.get(A)][marker.get(j)] + g(i, new ArrayList<>(set2), matrix,new ArrayList<>(), marker);
                 values.add(value);
             }
         }
-
+        if (set2.isEmpty()) return matrix[marker.get(A)][0];
         return value;
     }
 }
