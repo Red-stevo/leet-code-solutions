@@ -14,13 +14,10 @@ def fibonacci_sequence(n):
 
 
 def fibonacci_dynamically(n, memoization):
-
     if memoization[n] is not None:
         return memoization[n]
-
     if n == 0:
         return 0
-
     if n == 1 or n == 2:
         return 1
     memoization.insert(n, fibonacci_dynamically(n-1, memoization) + fibonacci_dynamically(n-2, memoization))
