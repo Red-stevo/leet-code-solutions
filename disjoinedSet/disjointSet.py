@@ -1,3 +1,7 @@
+def find(values, firstNode, secondNode):
+    pass
+
+
 def main():
     values = [0]*11
     #     initialized the list.
