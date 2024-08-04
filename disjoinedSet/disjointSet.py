@@ -1,13 +1,16 @@
 def main():
-    list = []
-
+    values = [0]*11
     #     initialized the list.
     for i in range(11):
-        list[i] = i
+        values[i] = i
 
-    print(list)
+    print(values)
 
     print("\nEnter the node to be connected.")
+    firstNode = input("First Node : ")
+    secondNode = input("Second Node : ")
+
+    find(values, firstNode, secondNode)
 
 
 if __name__ == "__main__":
