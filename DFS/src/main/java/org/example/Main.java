@@ -56,6 +56,6 @@ public class Main {
         nodeC.setChildren(List.of(nodeA, nodeD));
         nodeD.setChildren(List.of(nodeA, nodeC, nodeB));
 
-        return nodeD;
+        return nodeA;
     }
 }
