@@ -31,4 +31,8 @@ public class Node<T> {
     public void setPreviousNode(Node<T> previousNode) {
         this.previousNode = previousNode;
     }
+
+    public Node(T data) {
+        this.data = data;
+    }
 }
