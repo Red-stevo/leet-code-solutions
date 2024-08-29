@@ -1,5 +1,7 @@
 package LinkedListQueue;
 
+import java.util.logging.Logger;
+
 public class Queue<T> {
 
     private Node<T> firstIn = null;
@@ -16,6 +18,20 @@ public class Queue<T> {
             return;
         }
 
+        node.setPreviousNode(firstIn);
+        firstIn.setNextNode(node);
+        firstIn = node;
+    }
 
+    public T dequeue(){
+      if(firstIn == null){
+          System.out.println("Error, Queue is empty.");
+          System.exit(1);
+      }
+
+      T data = firstIn.getData();
+      firstIn = firstIn.getNextNode();
+
+      return data;
     }
 }
