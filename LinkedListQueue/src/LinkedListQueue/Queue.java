@@ -18,9 +18,9 @@ public class Queue<T> {
             return;
         }
 
-        node.setPreviousNode(firstIn);
-        firstIn.setNextNode(node);
-        firstIn = node;
+        node.setPreviousNode(lastIn);
+        lastIn.setNextNode(node);
+        lastIn = node;
     }
 
     public T dequeue(){
