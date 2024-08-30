@@ -5,7 +5,7 @@ import TwoStackAlgo.Calculator;
 public class Main {
     public static void main(String[] args) {
         Calculator calculator = new Calculator();
-        String problem = "(2-((8+(5*2)-9)/7) + (5-3)+(2+9))";
+        String problem = "(2520/(10 + ((120 + 12) + 110)))";
         Double result = calculator.calculate(problem);
 
         System.out.println(problem+" = "+result);

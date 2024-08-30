@@ -21,24 +21,35 @@ public class Calculator {
     public Double calculate(String arithmeticProblem){
         Stack<Character> arithmeticStack = new Stack<>();
         Stack<Double> numbersStack = new Stack<>();
+        StringBuilder largeNumber = new StringBuilder();
 
         for (int i = 0; i < arithmeticProblem.length(); i++) {
-            if(arithmeticProblem.charAt(i) == '(' || arithmeticProblem.charAt(i) == ' ')
-                continue;
+            if(arithmeticProblem.charAt(i) == '(' || arithmeticProblem.charAt(i) == ' ') {
+            }
             else if (arithmeticProblem.charAt(i) == '+' || arithmeticProblem.charAt(i) == '*'
             || arithmeticProblem.charAt(i) == '/' || arithmeticProblem.charAt(i) == '-') {
+
                 arithmeticStack.push(arithmeticProblem.charAt(i));
-            } else if (arithmeticProblem.charAt(i) == ')') {
+
+            }else if (arithmeticProblem.charAt(i) == ')') {
+
                 Double firstNumber, secondNumber;
                 char operator = arithmeticStack.pop();
                 secondNumber = numbersStack.pop();
                 firstNumber = numbersStack.pop();
-
                 numbersStack.push(performCalculation(firstNumber, operator, secondNumber));
+                System.out.println(firstNumber+" | "+secondNumber);
+            } else if (checkNumber(arithmeticProblem.charAt(i)))
 
-            } else if (checkNumber(arithmeticProblem.charAt(i))) {
-                numbersStack.push(Double.parseDouble(String.valueOf(arithmeticProblem.charAt(i))));
-            }
+                if(checkNumber(arithmeticProblem.charAt(i+1))) {
+                    largeNumber.append(arithmeticProblem.charAt(i));
+
+                }else {
+                    largeNumber.append(arithmeticProblem.charAt(i));
+                    numbersStack.push(Double.parseDouble(String.valueOf(largeNumber)));
+                    //System.out.println(largeNumber);
+                    largeNumber = new StringBuilder();
+                }
         }
         return numbersStack.pop();
     }
@@ -59,8 +70,7 @@ public class Calculator {
             Double.parseDouble(String.valueOf(c));
             return true;
         } catch (NumberFormatException e) {
-            System.out.println("Invalid Character.");
-            System.exit(1);
+            return false;
         } catch (Exception e) {
             System.out.println(e.getMessage());
             System.exit(1);
