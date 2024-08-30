@@ -2,8 +2,6 @@ package TwoStackAlgo;
 
 import LinkedListStack.Stack;
 
-import java.util.logging.Logger;
-
 /**
  * The Algorithm performs the calculation give a string of the form
  *  (2*((3+4)+5))
@@ -42,7 +40,7 @@ public class Calculator {
                 numbersStack.push(Double.parseDouble(String.valueOf(arithmeticProblem.charAt(i))));
             }
         }
-        return null;
+        return numbersStack.pop();
     }
 
     private Double performCalculation(Double firstNumber, char operator, Double secondNumber) {
@@ -67,5 +65,6 @@ public class Calculator {
             System.out.println(e.getMessage());
             System.exit(1);
         }
+        return false;
     }
 }
