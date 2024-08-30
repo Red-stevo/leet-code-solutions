@@ -22,7 +22,7 @@ public class Calculator {
 
     public Double calculate(String arithmeticProblem){
         Stack<Character> arithmeticStack = new Stack<>();
-        Stack<Integer> numbersStack = new Stack<>();
+        Stack<Double> numbersStack = new Stack<>();
 
         for (int i = 0; i < arithmeticProblem.length(); i++) {
             if(arithmeticProblem.charAt(i) == '(' || arithmeticProblem.charAt(i) == ' ')
@@ -31,12 +31,29 @@ public class Calculator {
             || arithmeticProblem.charAt(i) == '/' || arithmeticProblem.charAt(i) == '-') {
                 arithmeticStack.push(arithmeticProblem.charAt(i));
             } else if (arithmeticProblem.charAt(i) == ')') {
+                Double firstNumber, secondNumber;
+                char operator = arithmeticStack.pop();
+                secondNumber = numbersStack.pop();
+                firstNumber = numbersStack.pop();
+
+                numbersStack.push(performCalculation(firstNumber, operator, secondNumber));
 
             } else if (checkNumber(arithmeticProblem.charAt(i))) {
-
+                numbersStack.push(Double.parseDouble(String.valueOf(arithmeticProblem.charAt(i))));
             }
         }
         return null;
+    }
+
+    private Double performCalculation(Double firstNumber, char operator, Double secondNumber) {
+        if (operator == '+')
+            return firstNumber + secondNumber;
+        else if(operator == '*')
+            return firstNumber * secondNumber;
+        else if (operator == '-')
+            return firstNumber - secondNumber;
+        else
+            return  firstNumber / secondNumber;
     }
 
     private boolean checkNumber(char c) {
