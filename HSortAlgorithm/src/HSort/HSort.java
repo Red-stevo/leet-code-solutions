@@ -8,7 +8,7 @@ public class HSort<T extends Comparable<T>> {
         int len = items.length,h = len,j;
         while (true) {
             h = ((h/4) - 1);
-            if (h < len) h = 1;
+            if (h < 100) h = 1;
             int i = 0;
             while (i < len) {
                 j = i + h;
