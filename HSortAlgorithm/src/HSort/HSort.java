@@ -7,8 +7,8 @@ public class HSort<T extends Comparable<T>> {
     public T[] hsort(T[] items){
         int len = items.length,h = len,j;
         while (true) {
-            h = ((h/3) - 1);
-            if (h < 2) h = 1;
+            h = ((h/4) - 1);
+            if (h < len) h = 1;
             int i = 0;
             while (i < len) {
                 j = i + h;
