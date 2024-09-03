@@ -26,7 +26,7 @@ public class Main {
     public static void hSortTest(){
         HSort<Integer> hSort = new HSort<Integer>();
         Random random = new Random();
-        int len = 160000;
+        int len = 500000;
         Integer[] arr = new Integer[len];
 
         for (int i = 0; i < len; i++) {
@@ -37,6 +37,5 @@ public class Main {
         for (Integer i : arr){
             System.out.print(i+"\t");
         }
-
     }
 }
