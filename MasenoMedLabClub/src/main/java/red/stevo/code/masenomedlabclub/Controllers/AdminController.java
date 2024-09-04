@@ -9,24 +9,23 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import red.stevo.code.masenomedlabclub.Models.RequestModels.IndexPageImageModel;
 import red.stevo.code.masenomedlabclub.Models.ResponseModel.UserGeneralResponse;
-import red.stevo.code.masenomedlabclub.Service.AdminService;
+import red.stevo.code.masenomedlabclub.Service.AdminIndexImagesStorageService;
 
 import java.util.List;
-import java.util.logging.Logger;
 
 @Slf4j
 @RequestMapping("/admin")
 @RequiredArgsConstructor
 public class AdminController {
-    private AdminService adminService;
+    private AdminIndexImagesStorageService adminIndexImagesStorageService;
 
     /*This end point handles storing of url, name and description of the upload images.
-    * These values are received from the from end provided by the cloudinary API.*/
-    public ResponseEntity<UserGeneralResponse> uploadedImage(
+    * These values are received from the font-end provided by the cloudinary API.*/
+    public ResponseEntity<UserGeneralResponse> uploadedImage( @Validated
             @NonNull @RequestBody List<IndexPageImageModel> uploadedImage){
         log.info("Request to store upload images");
 
 
-        return null;
+        return adminIndexImagesStorageService.storeUploadedImagesUrl(uploadedImage);
     }
 }
