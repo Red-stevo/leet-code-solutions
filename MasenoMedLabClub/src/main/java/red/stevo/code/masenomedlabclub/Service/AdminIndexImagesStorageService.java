@@ -25,7 +25,7 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 public class AdminIndexImagesStorageService {
 
-    private ImageRepository imageRepository;
+    private final ImageRepository imageRepository;
 
 
     /*This Method receives image details from the controller and pushes them to the database.*/
