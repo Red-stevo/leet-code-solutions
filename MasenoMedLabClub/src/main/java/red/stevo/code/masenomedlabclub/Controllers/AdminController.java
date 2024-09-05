@@ -40,8 +40,6 @@ public class AdminController {
     @DeleteMapping("/delete/image/{image-id}")
     public ResponseEntity<UserGeneralResponse> deleteIndexPAgeImage(@PathVariable ("image-id")String imageId){
         log.info("Request to delete index image.");
-
-
-        return null;
+        return adminIndexImagesStorageService.deleteIndexPageImage(imageId);
     }
 }

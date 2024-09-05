@@ -70,9 +70,16 @@ public class AdminIndexImagesStorageService {
     }
 
     public ResponseEntity<UserGeneralResponse> deleteIndexPageImage(String imageId){
+        log.info("Processing image for deletion.");
 
+        /*delete image.*/
+        imageRepository.deleteById(imageId);
 
+        UserGeneralResponse userGeneralResponse = new UserGeneralResponse();
+        userGeneralResponse.setHttpStatus(HttpStatus.OK);
+        userGeneralResponse.setDate(new Date());
+        userGeneralResponse.setMessage("Image deleted successfully.");
 
-        return null;
+        return new ResponseEntity<>(userGeneralResponse, HttpStatus.OK);
     }
 }
