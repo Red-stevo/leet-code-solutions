@@ -9,6 +9,7 @@ import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.support.HttpComponentsHeadersAdapter;
 import org.springframework.stereotype.Service;
+import org.springframework.validation.annotation.Validated;
 import red.stevo.code.masenomedlabclub.Entities.IndexPageImages;
 import red.stevo.code.masenomedlabclub.Models.RequestModels.IndexPageImageModel;
 import red.stevo.code.masenomedlabclub.Models.ResponseModel.UserGeneralResponse;
@@ -29,7 +30,8 @@ public class AdminIndexImagesStorageService {
 
 
     /*This Method receives image details from the controller and pushes them to the database.*/
-    public ResponseEntity<UserGeneralResponse> storeUploadedImagesUrl(List<IndexPageImageModel> uploadedImage){
+    public ResponseEntity<UserGeneralResponse>
+    storeUploadedImagesUrl(@Validated List<IndexPageImageModel> uploadedImage){
         log.info("Processing passed urls for storage.");
 
 

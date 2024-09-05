@@ -26,7 +26,7 @@ public class AdminController {
     * These values are received from the font-end provided by the cloudinary API.*/
     @PostMapping("/save/images")
     public ResponseEntity<UserGeneralResponse>
-    uploadedImage(@Validated @RequestBody List<IndexPageImageModel> uploadedImage){
+    uploadedImage(@RequestBody @Validated List<IndexPageImageModel> uploadedImage){
         log.info("Request to store upload images");
         return adminIndexImagesStorageService.storeUploadedImagesUrl(uploadedImage);
     }
