@@ -52,4 +52,20 @@ public class AdminIndexImagesStorageService {
 
         return new ResponseEntity<>(userGeneralResponse, HttpStatus.OK);
     }
+
+    /*This Method will fetch all index images details stored in the
+    * database and map them to the IndexPageImageModel and return them to the user.*/
+    public ResponseEntity<List<IndexPageImageModel>> getAllIndexPageImages(){
+        log.info("Processing index images fetch requests");
+
+        List<IndexPageImageModel> imageDetails = new ArrayList<>();
+
+        imageRepository.findAll().forEach((image) -> {
+            IndexPageImageModel indexPageImageModel = new
+                    IndexPageImageModel(image.getId(), image.getUrl(), image.getDescription(), image.getName());
+            imageDetails.add(indexPageImageModel);
+        });
+
+        return new ResponseEntity<>(imageDetails, HttpStatus.OK);
+    }
 }
