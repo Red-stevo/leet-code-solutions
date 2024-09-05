@@ -68,4 +68,11 @@ public class AdminIndexImagesStorageService {
 
         return new ResponseEntity<>(imageDetails, HttpStatus.OK);
     }
+
+    public ResponseEntity<UserGeneralResponse> deleteIndexPageImage(String imageId){
+
+
+
+        return null;
+    }
 }
