@@ -1,6 +1,5 @@
 package red.stevo.code.masenomedlabclub.Controllers;
 
-import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
@@ -13,9 +12,9 @@ import red.stevo.code.masenomedlabclub.Service.AdminIndexImagesStorageService;
 import java.util.List;
 
 @Slf4j
-@RequestMapping("/apis/admin")
-@RequiredArgsConstructor
 @RestController
+@RequiredArgsConstructor
+@RequestMapping("/apis/admin")
 public class AdminController {
     private final AdminIndexImagesStorageService adminIndexImagesStorageService;
 
