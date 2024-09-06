@@ -4,6 +4,8 @@ import jakarta.annotation.PostConstruct;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
@@ -55,6 +57,7 @@ public class AdminIndexImagesStorageService {
 
     /*This Method will fetch all index images details stored in the
     * database and map them to the IndexPageImageModel and return them to the user.*/
+    @Cacheable(value ="IndexPageImages")
     public ResponseEntity<List<IndexPageImageModel>> getAllIndexPageImages(){
         log.info("Processing index images fetch requests");
 
@@ -69,6 +72,7 @@ public class AdminIndexImagesStorageService {
         return new ResponseEntity<>(imageDetails, HttpStatus.OK);
     }
 
+    @CacheEvict(value = "IndexPageImages", allEntries =true )
     public ResponseEntity<UserGeneralResponse> deleteIndexPageImage(String imageId){
         log.info("Processing image for deletion.");
 
