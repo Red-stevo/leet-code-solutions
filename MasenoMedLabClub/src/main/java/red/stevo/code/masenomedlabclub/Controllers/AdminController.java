@@ -14,6 +14,7 @@ import java.util.List;
 @Slf4j
 @RestController
 @RequiredArgsConstructor
+@CrossOrigin("*")
 @RequestMapping("/apis/admin")
 public class AdminController {
     private final AdminIndexImagesStorageService adminIndexImagesStorageService;
