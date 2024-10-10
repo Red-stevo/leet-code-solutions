@@ -7,8 +7,8 @@ public class Main {
     * Time complexity : O(n) -> linear, where n is the length of the string
     * */
     public static void main(String[] args) {
-        String str1 = "hello";
-        String str2 = "olehl";
+        String str1 = "ce";
+        String str2 = "dd";
 
         Main main = new Main();
         System.out.println(main.isPermutation(str1, str2));
