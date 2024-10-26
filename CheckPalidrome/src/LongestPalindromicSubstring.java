@@ -24,4 +24,13 @@ public class LongestPalindromicSubstring {
         }
         return right - left - 1;
     }
+
+
+    public static void main(String[] args) {
+        String input1 = "babad";
+        String input2 = "cbbd";
+
+        System.out.println("longest palindrome in input1 is :"+lonestPalindrome(input1));
+        System.out.println("longest palindrome in input2 is :"+lonestPalindrome(input2));
+    }
 }
