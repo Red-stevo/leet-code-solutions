@@ -1,39 +1,31 @@
+import java.nio.ByteBuffer;
+
 public class DataRecord {
+    private long id;
+    private double key;
 
-    private long recordId;
-
-    private Double recordKey;
-
-
-    public DataRecord(long recordId, Double recordKey){
-        this.recordId = recordId;
-        this.recordKey = recordKey;
+    public DataRecord(long id, double key) {
+        this.id = id;
+        this.key = key;
     }
 
-    public long getRecordId(){
-        return  recordId;
+    public long getId() {
+        return id;
     }
 
-    public Double getRecordKey(){
-        return recordKey;
+    public double getKey() {
+        return key;
     }
 
-    public void setRecordKey(Double recordKey){
-        this.recordKey = recordKey;
+    public static byte[] toByteArray(DataRecord record) {
+        ByteBuffer buffer = ByteBuffer.allocate(16);
+        buffer.putLong(record.getId());
+        buffer.putDouble(record.getKey());
+        return buffer.array();
     }
 
-    public void  setRecordId(long recordId){
-        this.recordId = recordId;
+    public static DataRecord fromByteArray(byte[] bytes) {
+        ByteBuffer buffer = ByteBuffer.wrap(bytes);
+        return new DataRecord(buffer.getLong(), buffer.getDouble());
     }
-
-    public String toString(){
-        return recordId +","+recordKey;
-    }
-
-    public DataRecord toRecordFields(String fileRecord){
-
-        String[] fields = fileRecord.split(",");
-        return new DataRecord(Long.parseLong(fields[0]), Double.parseDouble(fields[1]));
-    }
-
 }
