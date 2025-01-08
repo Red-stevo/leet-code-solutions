@@ -1,10 +1,18 @@
 package org.example.Accessories;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+
 import java.util.List;
-import java.util.Locale;
 
 
+@Data
+@AllArgsConstructor
 public class PriorityQueue {
 
-    List<Long> frequecies;
+    List<Long> frequencies;
+
+    public void putFrequencies(Long value){
+
+    }
 }
