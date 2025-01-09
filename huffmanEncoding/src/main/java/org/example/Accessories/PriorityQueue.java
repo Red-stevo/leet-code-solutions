@@ -6,11 +6,14 @@ import lombok.Data;
 import java.util.List;
 
 
-@Data
-@AllArgsConstructor
+
 public class PriorityQueue {
 
     List<Long> frequencies;
+
+    public PriorityQueue(List<Long> frequencies) {
+
+    }
 
     public void putFrequencies(Long value){
 
