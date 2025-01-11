@@ -60,4 +60,9 @@ public class PriorityQueue {
     public boolean hasNext(){
         return !frequencies.isEmpty();
     }
+
+    public Long peak(){
+        if (hasNext()) return frequencies.remove(0);
+        return null;
+    }
 }
