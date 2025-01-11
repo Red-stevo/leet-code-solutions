@@ -1,11 +1,7 @@
 package org.example.Accessories;
 
-
 import java.util.Arrays;
 import java.util.List;
-
-
-
 public class PriorityQueue {
 
     List<Long> frequencies;
@@ -61,7 +57,7 @@ public class PriorityQueue {
         }
     }
 
-    public void putFrequencies(Long value){
-
+    public boolean hasNext(){
+        return !frequencies.isEmpty();
     }
 }
