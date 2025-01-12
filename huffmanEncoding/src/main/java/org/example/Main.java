@@ -9,17 +9,16 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        List<Long> numbers = new ArrayList<>(List.of(8L, 7L, 6L, 2L, 5L, 4L, 4L, 2L, 3L, 2L, 1L, 1L));
-
-        PriorityQueue priorityQueue = new PriorityQueue(numbers);
-
-        String text = "eber7yfbyufbfyubfbvo8bvvbvybv vb ubtvdf udnaf uebeb";
+        String text = "sssssssssssssssttttttttttteeeeepppppppppphhhhhhhhhhhhhhhhheeeeennnnnnnnnnnnnnn mmmmmmmmmmmuuuuiiiiiiiiirrrrrruuuuuu";
 
         StringCount stringCount = text1 -> {
-
-
-            return null;
+            HashMap<Character, Long> freMap = new HashMap<>();
+            for(Character Char : text1.toCharArray()){
+                freMap.put(Char, freMap.getOrDefault(Char, 0L)+1L);
+            }
+            return freMap;
         };
-        HashMap<Character, Long> frequencyMap = stringCount.count(text);
+
+        PriorityQueue priorityQueue = new PriorityQueue(new ArrayList<>(stringCount.count(text).values()));
     }
 }
