@@ -8,7 +8,7 @@ import java.util.HashMap;
 
 public class Main {
     public static void main(String[] args) {
-        String text = "sssssssssssssssttttttttttteeeeepppppppppphhhhhhhhhhhhhhhhheeeeennnnnnnnnnnnnnn mmmmmmmmmmmuuuuiiiiiiiiirrrrrruuuuuu";
+        String text = "sssssssssssssssttttttttteeeeeeeeeepppppppppppppphhhhhhhhhhhhhhhhheeeeeeeeeennnnnnnnnnnnnnnnnnnn mmmmmmmmmmmuuuuiiiiiiiiirrrrrruuuuuu";
 
         StringCount stringCount = text1 -> {
             HashMap<Character, Long> freMap = new HashMap<>();
