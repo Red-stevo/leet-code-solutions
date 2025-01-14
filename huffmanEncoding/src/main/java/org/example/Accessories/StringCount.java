@@ -4,5 +4,5 @@ import java.util.HashMap;
 
 @FunctionalInterface
 public interface StringCount {
-    HashMap<Character, Long> count(String text);
+    HashMap<Character, CharacterData> count(String text);
 }
