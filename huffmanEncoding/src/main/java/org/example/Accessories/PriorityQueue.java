@@ -3,21 +3,21 @@ package org.example.Accessories;
 import java.util.Arrays;
 import java.util.List;
 public class PriorityQueue {
-    List<Long> frequencies;
+    List<CharacterData> frequencies;
 
-    public PriorityQueue(List<Long> frequencies) {
+    public PriorityQueue(List<CharacterData> frequencies) {
         this.frequencies = frequencies;
         subSort(frequencies);
         System.out.println(Arrays.toString(frequencies.toArray()));
     }
 
-    private void subSort(List<Long> frequencies) {
+    private void subSort(List<CharacterData> frequencies) {
         int i = frequencies.size()-1;
         int parent = (i-1)/2;
 
         while (parent >= 0){
-            if (frequencies.get(parent) > frequencies.get(i)){
-                Long temp = frequencies.get(i);
+            if (frequencies.get(parent).getCharacterCount() > frequencies.get(i).getCharacterCount()){
+                CharacterData temp = frequencies.get(i);
                 frequencies.set(i, frequencies.get(parent));
                 frequencies.set(parent, temp);
 
@@ -27,11 +27,11 @@ public class PriorityQueue {
                     int rightChild = j*2+1;
 
                     if (rightChild <= frequencies.size()-1){
-                        if (frequencies.get(j) <= frequencies.get(leftChild) &&
-                                frequencies.get(j) <= frequencies.get(rightChild))
+                        if (frequencies.get(j).getCharacterCount() <= frequencies.get(leftChild).getCharacterCount() &&
+                                frequencies.get(j).getCharacterCount() <= frequencies.get(rightChild).getCharacterCount())
                             break;
 
-                        if (frequencies.get(leftChild) <= frequencies.get(rightChild)){
+                        if (frequencies.get(leftChild).getCharacterCount() <= frequencies.get(rightChild).getCharacterCount()){
                             temp = frequencies.get(j);
                             frequencies.set(j, frequencies.get(leftChild));
                             frequencies.set(leftChild, temp);
@@ -43,7 +43,7 @@ public class PriorityQueue {
                             j = rightChild;
                         }
                     }else {
-                        if (frequencies.get(j) <= frequencies.get(leftChild)) break;
+                        if (frequencies.get(j).getCharacterCount() <= frequencies.get(leftChild).getCharacterCount()) break;
                         temp = frequencies.get(j);
                         frequencies.set(j, frequencies.get(leftChild));
                         frequencies.set(leftChild, temp);
@@ -60,7 +60,7 @@ public class PriorityQueue {
         return !frequencies.isEmpty();
     }
 
-    public Long peak(){
+    public CharacterData peak(){
         if (hasNext()) return frequencies.remove(0);
         return null;
     }
