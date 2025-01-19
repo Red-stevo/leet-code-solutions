@@ -64,4 +64,9 @@ public class PriorityQueue {
         if (hasNext()) return frequencies.remove(0);
         return null;
     }
+
+    public void putNode(CharacterData characterData){
+        frequencies.add(characterData);
+        subSort(frequencies);
+    }
 }

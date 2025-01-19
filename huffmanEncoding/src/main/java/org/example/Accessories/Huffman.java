@@ -28,7 +28,7 @@ public class Huffman {
         stringCount.count(text).forEach((character, characterData) -> {data.add(characterData);});
         PriorityQueue priorityQueue = new PriorityQueue(data);
 
-        iHuffman.result(iHuffman.codeMap(iHuffman.createTree(priorityQueue, priorityQueue1 -> {
+        return iHuffman.result(iHuffman.codeMap(iHuffman.createTree(priorityQueue, priorityQueue1 -> {
 
             return null;
         }), characterData -> {
@@ -38,7 +38,5 @@ public class Huffman {
 
           return null;
         });
-
-        return null;
     }
 }
