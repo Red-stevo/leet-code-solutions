@@ -2,17 +2,31 @@ package org.example.Accessories;
 
 import java.util.HashMap;
 
-public interface IHuffman {
+public class IHuffman {
 
-    interface codeTree {
-        CharacterData createTree(PriorityQueue priorityQueue);
+    public interface codeTree {
+        CharacterData binaryTree(PriorityQueue priorityQueue);
     }
 
-    interface characterCodes {
-        HashMap<Character, String> codeMap(CharacterData characterData);
+    public interface characterCodes {
+        HashMap<Character, String> encodedMap(CharacterData characterData);
     }
 
-    interface resultCode {
+    public interface resultCode {
         String encodedString(HashMap<Character, String> hashMap);
     }
+
+    public CharacterData createTree(PriorityQueue priorityQueue,codeTree codeTree){
+       return codeTree.binaryTree(priorityQueue);
+    }
+
+
+    public HashMap<Character, String> codeMap(CharacterData characterData, characterCodes characterCodes) {
+        return characterCodes.encodedMap(characterData);
+    }
+
+    public String result(HashMap<Character, String> hashMap, resultCode resultCode){
+        return resultCode.encodedString(hashMap);
+    }
+
 }
