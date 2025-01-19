@@ -7,7 +7,7 @@ import java.util.List;
 
 public class Huffman {
 
-    private IHuffman iHuffman;
+    private final IHuffman iHuffman;
 
     public Huffman(){
         iHuffman = new IHuffman();
@@ -28,7 +28,16 @@ public class Huffman {
         stringCount.count(text).forEach((character, characterData) -> {data.add(characterData);});
         PriorityQueue priorityQueue = new PriorityQueue(data);
 
+        iHuffman.result(iHuffman.codeMap(iHuffman.createTree(priorityQueue, priorityQueue1 -> {
 
+            return null;
+        }), characterData -> {
+
+            return null;
+        }), (hashMap) -> {
+
+          return null;
+        });
 
         return null;
     }
