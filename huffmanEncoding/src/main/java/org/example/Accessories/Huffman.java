@@ -29,8 +29,17 @@ public class Huffman {
         PriorityQueue priorityQueue = new PriorityQueue(data);
 
         return iHuffman.result(iHuffman.codeMap(iHuffman.createTree(priorityQueue, priorityQueue1 -> {
+            CharacterData node1 = null, node2;
 
-            return null;
+            while (priorityQueue1.hasNext()){
+                node1 = priorityQueue1.peak();
+                if (!priorityQueue.hasNext()) break;
+                node2 = priorityQueue1.peak();
+
+                priorityQueue.putNode(new CharacterData(null,
+                            node1.getCharacterCount() + node2.getCharacterCount(), node1, node2));
+            }
+            return node1;
         }), characterData -> {
 
             return null;
