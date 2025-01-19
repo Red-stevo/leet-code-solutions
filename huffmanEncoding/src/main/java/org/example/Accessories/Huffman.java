@@ -29,20 +29,57 @@ public class Huffman {
         PriorityQueue priorityQueue = new PriorityQueue(data);
 
         return iHuffman.result(iHuffman.codeMap(iHuffman.createTree(priorityQueue, priorityQueue1 -> {
-            CharacterData node1 = null, node2;
+            CharacterData node1 = null, node2, parent;
 
             while (priorityQueue1.hasNext()){
                 node1 = priorityQueue1.peak();
                 if (!priorityQueue.hasNext()) break;
                 node2 = priorityQueue1.peak();
 
-                priorityQueue.putNode(new CharacterData(null,
-                            node1.getCharacterCount() + node2.getCharacterCount(), node1, node2));
+                parent = new CharacterData(null,
+                        node1.getCharacterCount() + node2.getCharacterCount(), node1, node2, null, false);
+                node1.setParent(parent);
+                node2.setParent(parent);
+                priorityQueue.putNode(parent);
+
             }
+            System.out.println(node1);
             return node1;
         }), characterData -> {
+            HashMap<Character, String> encodeMap = new HashMap<>();
+            StringBuilder stringBuilder = new StringBuilder();
 
-            return null;
+
+            while(true) {
+
+                if (characterData.getLeftChild() != null && !characterData.getLeftChild().isVisited()) {
+                    stringBuilder.append('0');
+                    characterData = characterData.getLeftChild();
+                    continue;
+                } else {
+                    if (characterData.getCharacterData() != null) {
+                        encodeMap.put(characterData.getCharacterData(), stringBuilder.toString());
+                        stringBuilder.deleteCharAt(stringBuilder.toString().length() - 1);
+                        characterData.setVisited(true);
+                        characterData = characterData.getParent();
+                    }
+                }
+
+                if (characterData.getRightChild() != null  && !characterData.getRightChild().isVisited()) {
+                    stringBuilder.append('1');
+                    characterData = characterData.getRightChild();
+                    continue;
+                }
+
+                if (characterData.getParent() != null){
+                    characterData.setVisited(true);
+                    stringBuilder.deleteCharAt(stringBuilder.toString().length() - 1);
+                    characterData = characterData.getParent();
+                } else break;
+
+            }
+            System.out.println(encodeMap);
+            return encodeMap;
         }), (hashMap) -> {
 
           return null;

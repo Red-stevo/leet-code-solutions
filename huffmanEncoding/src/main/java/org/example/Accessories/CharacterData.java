@@ -16,6 +16,10 @@ public class CharacterData {
 
     private CharacterData rightChild;
 
+    private CharacterData parent;
+
+    private boolean isVisited;
+
     public CharacterData(Character characterData, Long characterCount){
         this.characterData = characterData;
         this.characterCount = characterCount;
@@ -27,6 +31,6 @@ public class CharacterData {
                 ", " + characterCount +
                 ", " + leftChild +
                 ", " + rightChild +
-                "}\t";
+                "} ";
     }
 }
