@@ -43,13 +43,10 @@ public class Huffman {
                 priorityQueue.putNode(parent);
 
             }
-            System.out.println(node1);
             return node1;
         }), characterData -> {
             HashMap<Character, String> encodeMap = new HashMap<>();
             StringBuilder stringBuilder = new StringBuilder();
-
-
             while(true) {
 
                 if (characterData.getLeftChild() != null && !characterData.getLeftChild().isVisited()) {
@@ -78,11 +75,11 @@ public class Huffman {
                 } else break;
 
             }
-            System.out.println(encodeMap);
             return encodeMap;
-        }), (hashMap) -> {
-
-          return null;
-        });
+        }),text, ((hashMap, text1) -> {
+            StringBuilder stringBuilder = new StringBuilder();
+            for (Character c : text1.toCharArray()) stringBuilder.append(hashMap.get(c));
+            return stringBuilder.toString();
+        }));
     }
 }

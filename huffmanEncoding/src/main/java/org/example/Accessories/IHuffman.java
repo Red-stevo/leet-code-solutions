@@ -13,7 +13,7 @@ public class IHuffman {
     }
 
     public interface resultCode {
-        String encodedString(HashMap<Character, String> hashMap);
+        String encodedString(HashMap<Character, String> hashMap, String text);
     }
 
     public CharacterData createTree(PriorityQueue priorityQueue,codeTree codeTree){
@@ -25,8 +25,8 @@ public class IHuffman {
         return characterCodes.encodedMap(characterData);
     }
 
-    public String result(HashMap<Character, String> hashMap, resultCode resultCode){
-        return resultCode.encodedString(hashMap);
+    public String result(HashMap<Character, String> hashMap,String text, resultCode resultCode){
+        return resultCode.encodedString(hashMap, text);
     }
 
 }
