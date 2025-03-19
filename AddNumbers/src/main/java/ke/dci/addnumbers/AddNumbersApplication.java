@@ -1,5 +1,7 @@
 package ke.dci.addnumbers;
 
+import ke.dci.addnumbers.Model.Node;
+import ke.dci.addnumbers.Solution.Solution;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -15,6 +17,15 @@ public class AddNumbersApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        log.warn("Hello Steve");
+        Solution solution = new Solution();
+
+        Node node = solution.add(solution.generateList(new int[]{9,9,9}), solution.generateList(new int[]{9,9,9}));
+
+        while (true){
+            log.info("Val {}", node.getVal());
+            node = node.getNext();
+
+            if (node == null) break;
+        }
     }
 }
