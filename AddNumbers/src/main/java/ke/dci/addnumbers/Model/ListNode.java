@@ -3,8 +3,7 @@ package ke.dci.addnumbers.Model;
 
 public class ListNode {
 
-    public ct
-    int val;
+    public int val;
     public ListNode next;
     
     public ListNode() {}
