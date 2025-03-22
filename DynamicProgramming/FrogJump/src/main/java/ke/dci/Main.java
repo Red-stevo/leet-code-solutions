@@ -1,6 +1,8 @@
 package ke.dci;
 
-import ke.dci.TopDownSolution.Solution;
+
+
+import ke.dci.BottomUpSolution.Solution;
 
 import java.util.Random;
 
@@ -8,7 +10,7 @@ import java.util.Random;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        int size = 7000;
+        int size = 100000000;
         int[] cost = new int[size];
 
         for (int i = 0; i < size; i++){
@@ -16,7 +18,7 @@ public class Main {
             cost[i] = r.nextInt(-30, -20);
         }
 
-        //int[] cost = new int[]{20, 40, 60, 10, 60};
+        //int[] cost = new int[]{20, 0, 60, 30, 60, 10};
 
 
         Solution solution = Solution
