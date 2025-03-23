@@ -2,13 +2,15 @@ package ke.dci.BottomUpSolution;
 
 import lombok.Builder;
 
-import java.util.Arrays;
-
 @Builder
 public class Solution {
 
     private int[] cost;
 
+    /**
+     * Dynamic programming problem for frog jump bottom up approach.
+     * @return
+     */
     public int run() {
         if (cost.length == 0) return 0;
 
@@ -23,6 +25,13 @@ public class Solution {
         return solution(cost.length -1);
     }
 
+
+    /**
+     *
+     * @param k give the number of possible jumps.
+     * @param n random value, only used here for method overloading.
+     * @return the total minimum cost.
+     */
     public int run(int k, int n){
         System.out.println(n);
 
@@ -31,6 +40,13 @@ public class Solution {
         return solution(k, cost.length - 1);
     }
 
+
+    /**
+     *
+     * @param k give the number of possible jumps.
+     * @param n the size of the case problem.
+     * @return the total minimum cost.
+     */
     private int solution(int k, int n){
         int[] dp = new int[n+1];
         dp[0] = 0;
