@@ -2,6 +2,8 @@ package ke.dci.BottomUpSolution;
 
 import lombok.Builder;
 
+import java.util.Arrays;
+
 @Builder
 public class Solution {
 
@@ -19,6 +21,34 @@ public class Solution {
         if (cost.length == 0) return 0;
 
         return solution(cost.length -1);
+    }
+
+    public int run(int k, int n){
+        System.out.println(n);
+
+        if (cost.length == 0) return 0;
+
+        return solution(k, cost.length - 1);
+    }
+
+    private int solution(int k, int n){
+        int[] dp = new int[n+1];
+        dp[0] = 0;
+
+        for (int i = 1; i <= n; ++i){
+
+            int min = Integer.MAX_VALUE;
+            for (int h = 1; h <= k; h++){
+                if (i-h >= 0){
+                    int value = dp[i-h] + Math.abs(cost[i] - cost[i-h]);
+
+                    if (value < min) min = value;
+                }else break;
+            }
+            dp[i] = min;
+        }
+
+        return dp[n];
     }
 
 
