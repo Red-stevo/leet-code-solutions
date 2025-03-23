@@ -6,8 +6,6 @@ import ke.dci.BottomUpSolution.Solution;
 
 import java.util.Random;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
         int size = 100000000;
@@ -18,14 +16,13 @@ public class Main {
             cost[i] = r.nextInt(-30, -20);
         }
 
-        //int[] cost = new int[]{20, 0, 60, 30, 60, 10};
-
-
+       // int[] cost = new int[]{20, 0, 60, 30, 60, 10};
+        
         Solution solution = Solution
                 .builder()
                 .cost( cost )
                 .build();
 
-        System.out.println(solution.run());
+        System.out.println(solution.run(1));
     }
 }
