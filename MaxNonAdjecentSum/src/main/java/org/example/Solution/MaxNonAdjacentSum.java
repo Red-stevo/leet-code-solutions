@@ -1,49 +1,49 @@
 package org.example.Solution;
 
-import java.lang.reflect.Array;
+
 import java.util.Arrays;
 
 public class MaxNonAdjacentSum {
 
-    private int max;
-
-    public MaxNonAdjacentSum() {
-        max = Integer.MIN_VALUE;
+    public int run(int[] arr){
+        int[] mem = new int[arr.length];
+        Arrays.fill(mem, -1);
+        return findMaxNonAdjacentSum(arr.length - 1, arr, mem);
     }
 
-    public int run(int[] arr) {
-        if (arr == null || arr.length == 0) return 0;
-
-        int[] dp = new int[arr.length];
-
-        maxNonAdjacentSum(arr, dp, dp.length - 1);
-
-        return max;
-    }
-
-    public int maxNonAdjacentSum(int[] arr, int[] dp, int index) {
+    private int findMaxNonAdjacentSum(int index, int[] arr, int[] mem){
 
         if (index == 0) return arr[0];
 
-        if(index == 1) return arr[1];
+        if (index == -1) return 0;
 
-        if (dp[index] != 0) return dp[index];
+        if (mem[index] != -1) return mem[index];
 
-        int left = arr[index - 2] + maxNonAdjacentSum(arr, dp, index - 1);
+        int left = arr[index] + findMaxNonAdjacentSum(index-2, arr, mem);
 
-        System.out.println(Arrays.toString(dp));
+        int right = findMaxNonAdjacentSum(index-1, arr, mem);
 
-        return maxNonAdjacentSum(arr, dp, index - 1);
+        mem[index] = Math.max(left, right);
+
+        System.out.println(Arrays.toString(mem));
+
+        return mem[index];
     }
 
+    private int findMaxNonAdjacentSum(int[] arr){
 
-    /**
-     *      Dynamic Programming Tabular solution.
-     * @param arr the array of numbers.
-     * @return the maximum sum of the non-adjacent numbers in the array.
-     */
-    public int maxNonAdjacentSum(int[] arr) {
+        int pre1 = arr[0], pre2 = 0;
 
-        return 0;
+        for (int i = 1; i < arr.length; i++) {
+            int value;
+            if (i-2 < 0) value = pre2;
+            else value = arr[i-2] + pre1;
+            pre1 = arr[i-1];
+
+            
+        }
+
+        return pre1;
     }
+
 }
