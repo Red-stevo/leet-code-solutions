@@ -11,6 +11,12 @@ public class MaxNonAdjacentSum {
         return findMaxNonAdjacentSum(arr.length - 1, arr, mem);
     }
 
+    public int run2(int[] arr){
+        int[] mem = new int[arr.length];
+        Arrays.fill(mem, -1);
+        return findMaxNonAdjacentSum(arr);
+    }
+
     private int findMaxNonAdjacentSum(int index, int[] arr, int[] mem){
 
         if (index == 0) return arr[0];
@@ -35,12 +41,12 @@ public class MaxNonAdjacentSum {
         int pre1 = arr[0], pre2 = 0;
 
         for (int i = 1; i < arr.length; i++) {
-            int value;
-            if (i-2 < 0) value = pre2;
-            else value = arr[i-2] + pre1;
-            pre1 = arr[i-1];
+            int take = arr[i] + pre2;
 
-            
+            int notTake = pre1;
+
+            pre2 = pre1;
+            pre1 = Math.max(take, notTake);
         }
 
         return pre1;

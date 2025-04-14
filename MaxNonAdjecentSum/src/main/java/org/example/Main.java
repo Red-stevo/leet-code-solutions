@@ -12,7 +12,7 @@ import java.util.Random;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        int N = 10000;
+        int N = 100000000;
         Random r = new Random();
         int[] arr = new int[N];
         for (int i = 0; i < N; i++) {
@@ -28,7 +28,7 @@ public class Main {
 
         MaxNonAdjacentSum max = new MaxNonAdjacentSum();
 
-        System.out.println(max.run(new int[]{9, 1, 2, 3}));
+        System.out.println(max.run2(arr));
     }
 
 
